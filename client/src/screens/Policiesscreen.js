@@ -36,14 +36,14 @@ const Policiesscreen = () => {
           data-aos-duration="1300"
           data-aos-anchor-placement="center bottom"
           style={{fontSize: '1.5rem', color: 'black', textAlign: 'center', paddingLeft: '1rem', paddingRight: '1rem', paddingTop: '0',paddingBottom: '0', marginLeft: '3rem', marginRight: '3rem'}}>
-          Our rooms feature a queen or king size bed, one or two sitting chairs, a desk, a high definition TV, a tub or standing shower, toilet, an iron, ironing board, a fireplace, and windows. If you wish to request any additional items please let the cabin know with time. 
+          Our rooms feature a queen or king-size bed, one or two sitting chairs, a desk, a high definition TV, a tub or standing shower, toilet, an iron, ironing board, a fireplace, and windows. If you wish to request any additional items please let the cabin know with time. 
       </p>
       <br/>
       <b><p style={{fontSize: '1.5rem', color: 'black', textAlign: 'center', paddingLeft: '1rem', paddingRight: '1rem', paddingTop: '0',paddingBottom: '0', marginLeft: '3rem', marginRight: '3rem'}}>Children:</p></b><p data-aos="fade-right"
           data-aos-duration="1300"
           data-aos-anchor-placement="center bottom"
           style={{fontSize: '1.5rem', color: 'black', textAlign: 'center', paddingLeft: '1rem', paddingRight: '1rem', paddingTop: '0',paddingBottom: '0', marginLeft: '3rem', marginRight: '3rem'}}>
-          We ask that only people 18 years of age or older book a room, and all guests be at least 12 years of age or older. We want to maintain the cabin a quiet, adult friendly space for everyone's convinience and comfort. 
+          We ask that only people 18 years of age or older book a room, and all guests be at least 12 years of age or older. We want to maintain the cabin a quiet, adult friendly space for everyone's convenience and comfort. 
       </p>
       <br/>
       <b><p style={{fontSize: '1.5rem', color: 'black', textAlign: 'center', paddingLeft: '1rem', paddingRight: '1rem', paddingTop: '0',paddingBottom: '0', marginLeft: '3rem', marginRight: '3rem'}}>Minimum Stay:</p></b><p data-aos="fade-right"

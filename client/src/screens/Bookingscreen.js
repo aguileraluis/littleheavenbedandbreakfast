@@ -7,9 +7,9 @@ import moment from 'moment';
 import StripeCheckout from 'react-stripe-checkout';
 import Swal from 'sweetalert2';
 import AOS from 'aos';
-import 'aos/dist/aos.css'; 
+import 'aos/dist/aos.css';
 AOS.init({
-    duration : 2000
+    duration: 2000
 });
 
 function Bookingscreen() {
@@ -19,19 +19,24 @@ function Bookingscreen() {
     const [loading, setloading] = useState(true);
     const [error, seterror] = useState();
     const [room, setroom] = useState();
-    const totaldays = (moment.duration((moment(todate, 'DD-MM-YYYY')).diff(moment(fromdate, 'DD-MM-YYYY'))).asDays());
-    const [totalamount, settotalamount] = useState(0);
+    const totaldays = (moment.duration((moment(todate, 'MM-DD-YYYY')).diff(moment(fromdate, 'MM-DD-YYYY'))).asDays());
+    var [totalamount, settotalamount] = useState(0);
     const [wine, setwine] = useState(false);
-    const [chocolate, setchocolate] = useState(false); 
+    const [chocolate, setchocolate] = useState(false);
     const [flowers, setflowers] = useState(false);
-    const [taxes, settaxes] = useState(0)
+    const [taxes, settaxes] = useState(0);
+    const [salestax, setsales] = useState(0);
+    const [IsActive, setIsActive] = useState(false);
+    const [IsActiveTwo, setIsActiveTwo] = useState(false);
+    const [IsActiveThree, setIsActiveThree] = useState(false); 
 
-    // console.log(total)
 
-
+    console.log(fromdate)
+    console.log(todate)
 
     useEffect(() => {
-      
+
+        let grandtotal = 0;
         const fetchSingle = async () => {
             try {
                 setloading(true);
@@ -40,194 +45,223 @@ function Bookingscreen() {
 
                 if (name.includes("Joy")) {
                     let joytotal = JSON.parse(localStorage.getItem("Joy"));
-                    let flowers = JSON.parse(localStorage.getItem('flowers')); 
-                    let wine = JSON.parse(localStorage.getItem('wine'));
-                    let chocolate = JSON.parse(localStorage.getItem('chocolate'));
-                    let grandtotal = 0;
-     
+                
                     joytotal ? grandtotal += joytotal : grandtotal = 0;
 
                     if (flowers) {
                         (grandtotal += 45.99)
-                        setflowers(true)
+                       
                     } if (wine) {
                         (grandtotal += 40.00);
-                        setwine(true)
+                      
                     } if (chocolate) {
                         (grandtotal += 39.55);
-                        setchocolate(true)        
+                       
                     }
-                     else {
+                    else {
                         settotalamount(0);
                         setflowers(flowers);
                         setchocolate(chocolate);
-                        setwine(wine)                        
-                     }
-                     let tax = (joytotal * 0.06);
-                     settaxes(tax);
-                     settotalamount(grandtotal);
-            
-                   
-                }if (name.includes("Faith")) {
+                        setwine(wine)
+                    }
+                    let tax = (joytotal * 0.06);
+                    let ocutax = tax.toFixed(2);
+                    settaxes(ocutax);
+
+                    let salestax = (joytotal * 0.0675);
+
+                    let match = salestax.toFixed(2);
+
+                    setsales(match);
+
+                    grandtotal = grandtotal += tax += salestax
+
+                    settotalamount(grandtotal.toFixed(2));
+
+                } if (name.includes("Faith")) {
                     const faithtotal = JSON.parse(localStorage.getItem("Faith"))
-                    let flowers = JSON.parse(localStorage.getItem('flowers')); 
-                    let wine = JSON.parse(localStorage.getItem('wine'));
-                    let chocolate = JSON.parse(localStorage.getItem('chocolate'));
-                    let grandtotal = 0;
 
                     faithtotal ? grandtotal += faithtotal : grandtotal = 0;
 
                     if (flowers) {
                         (grandtotal += 45.99)
-                        setflowers(true)
+                    
 
                     } if (wine) {
                         (grandtotal += 40.00);
-                        setwine(true)
-                  
+                    
+
                     } if (chocolate) {
                         (grandtotal += 39.55);
-                        setchocolate(true)
-             
+                    
+
                     }
-                     else {
+                    else {
                         settotalamount(0);
                         setflowers(flowers);
                         setchocolate(chocolate);
-                        setwine(wine)                        
+                        setwine(wine)
                     }
                     let tax = (faithtotal * 0.06);
-                     settaxes(tax);
-                    settotalamount(grandtotal);   
+                    let ocutax = tax.toFixed(2);
+                    settaxes(ocutax);
+
+                    let salestax = (faithtotal * 0.0675);
+                    let match = salestax.toFixed(2);
+
+                    setsales(match);
+
+                    grandtotal = grandtotal += tax += salestax
+
+                    settotalamount(grandtotal.toFixed(2));
 
                 } if (name.includes("Love")) {
                     const lovetotal = JSON.parse(localStorage.getItem("Love"))
-                    let flowers = JSON.parse(localStorage.getItem('flowers')); 
-                    let wine = JSON.parse(localStorage.getItem('wine'));
-                    let chocolate = JSON.parse(localStorage.getItem('chocolate'));
-                    let grandtotal = 0;
 
                     lovetotal ? grandtotal += lovetotal : grandtotal = 0;
 
                     if (flowers) {
                         (grandtotal += 45.99)
-                        setflowers(true)
+                     
 
                     } if (wine) {
                         (grandtotal += 40.00);
-                        setwine(true)
-                  
+                       
+
                     } if (chocolate) {
                         (grandtotal += 39.55);
-                        setchocolate(true)
-             
+                      
+
                     }
-                     else {
+                    else {
                         settotalamount(0);
                         setflowers(flowers);
                         setchocolate(chocolate);
-                        setwine(wine)                        
+                        setwine(wine)
                     }
                     let tax = (lovetotal * 0.06);
-                     settaxes(tax);
-                    settotalamount(grandtotal);   
-                    
+                    let ocutax = tax.toFixed(2);
+                    settaxes(ocutax);
+
+                    let salestax = (lovetotal * 0.0675);
+                    let match = salestax.toFixed(2);
+
+                    setsales(match);
+
+                    grandtotal = grandtotal += tax += salestax
+
+                    settotalamount(grandtotal.toFixed(2));
+
                 } if (name.includes("Hope")) {
                     const hopetotal = JSON.parse(localStorage.getItem("Hope"))
-                    let flowers = JSON.parse(localStorage.getItem('flowers')); 
-                    let wine = JSON.parse(localStorage.getItem('wine'));
-                    let chocolate = JSON.parse(localStorage.getItem('chocolate'));
-                    let grandtotal = 0;
 
                     hopetotal ? grandtotal += hopetotal : grandtotal = 0;
 
                     if (flowers) {
                         (grandtotal += 45.99)
-                        setflowers(true)
+                       
 
                     } if (wine) {
                         (grandtotal += 40.00);
-                        setwine(true)
-                  
+                     
+
                     } if (chocolate) {
                         (grandtotal += 39.55);
-                        setchocolate(true)
-             
+                    
+
                     }
-                     else {
+                    else {
                         settotalamount(0);
                         setflowers(flowers);
                         setchocolate(chocolate);
-                        setwine(wine)                        
+                   
                     }
+
                     let tax = (hopetotal * 0.06);
-                     settaxes(tax);
-                    settotalamount(grandtotal); 
+                    let ocutax = tax.toFixed(2);
+                    settaxes(ocutax);
+
+                    let salestax = (hopetotal * 0.0675);
+                    let match = salestax.toFixed(2);
+
+                    setsales(match);
+
+                    grandtotal = grandtotal += tax += salestax
+
+                    settotalamount(grandtotal.toFixed(2));
 
                 } if (name.includes("Grace")) {
                     const gracetotal = JSON.parse(localStorage.getItem("Grace"))
-                    let flowers = JSON.parse(localStorage.getItem('flowers')); 
-                    let wine = JSON.parse(localStorage.getItem('wine'));
-                    let chocolate = JSON.parse(localStorage.getItem('chocolate'));
-                    let grandtotal = 0;
 
                     gracetotal ? grandtotal += gracetotal : grandtotal = 0;
 
                     if (flowers) {
                         (grandtotal += 45.99)
-                        setflowers(true)
+                   
 
                     } if (wine) {
                         (grandtotal += 40.00);
-                        setwine(true)
-                  
+               
+
                     } if (chocolate) {
                         (grandtotal += 39.55);
-                        setchocolate(true)
-             
+                     
+
                     }
-                     else {
+                    else {
                         settotalamount(0);
                         setflowers(flowers);
                         setchocolate(chocolate);
-                        setwine(wine)                        
+                        setwine(wine)
                     }
                     let tax = (gracetotal * 0.06);
-                     settaxes(tax);
-                    settotalamount(grandtotal); 
+                    let ocutax = tax.toFixed(2);
+                    settaxes(ocutax);
+
+                    let salestax = (gracetotal * 0.0675);
+                    let match = salestax.toFixed(2);
+
+                    setsales(match);
+
+                    grandtotal = grandtotal += tax += salestax
+
+                    settotalamount(grandtotal.toFixed(2));
 
                 } if (name.includes("Peace")) {
                     const peacetotal = JSON.parse(localStorage.getItem("Peace"))
-                    let flowers = JSON.parse(localStorage.getItem('flowers')); 
-                    let wine = JSON.parse(localStorage.getItem('wine'));
-                    let chocolate = JSON.parse(localStorage.getItem('chocolate'));
-                    let grandtotal = 0;
 
                     peacetotal ? grandtotal += peacetotal : grandtotal = 0;
 
                     if (flowers) {
                         (grandtotal += 45.99)
-                        setflowers(true)
+     
 
                     } if (wine) {
                         (grandtotal += 40.00);
-                        setwine(true)
-                  
+   
+
                     } if (chocolate) {
-                        (grandtotal += 39.55);
-                        setchocolate(true)
-             
+                        (grandtotal += 39.55)
                     }
-                     else {
+                    else {
                         settotalamount(0);
                         setflowers(flowers);
                         setchocolate(chocolate);
-                        setwine(wine)                        
+                        setwine(wine)
                     }
                     let tax = (peacetotal * 0.06);
-                     settaxes(tax);
-                    settotalamount(grandtotal); 
-                } 
+                    let ocutax = tax.toFixed(2);
+                    settaxes(ocutax);
+
+                    let salestax = (peacetotal * 0.0675);
+                    let match = salestax.toFixed(2);
+
+                    setsales(match);
+
+                    grandtotal = grandtotal += tax += salestax
+
+                    settotalamount(grandtotal.toFixed(2));
+                }
                 setroom(data)
                 setloading(false);
             } catch (error) {
@@ -236,12 +270,42 @@ function Bookingscreen() {
             }
         }
 
+
         fetchSingle().catch(console.error);
     }, [roomid, fromdate, todate, totaldays, totalamount, wine, flowers, chocolate]);
 
- 
+    function setnewamount(e) {
 
-    async function onToken(token){
+        if (e === 39.55) {
+
+            IsActive ? setIsActive(false) : setIsActive(true);
+            !IsActive ? setchocolate(true) : setchocolate(false);
+            var total = totalamount += 39.55;
+            settotalamount(total);
+        }
+        if (e === 45.99) {
+
+            IsActiveTwo ? setIsActiveTwo(false) : setIsActiveTwo(true);
+            !IsActiveTwo ? setflowers(true) : setflowers(false);
+            var totaltwo = totalamount += 45.99;
+            settotalamount(totaltwo);
+        }
+        if (e === 40.00) {
+
+            IsActiveThree ? setIsActiveThree(false) : setIsActiveThree(true);
+            !IsActiveThree ? setwine(true) : setwine(false);
+            var totalthree = totalamount += 40.00;
+            settotalamount(totalthree);
+
+        } 
+        else {
+       
+        }
+  
+   
+}
+
+    async function onToken(token) {
 
         let bookingDetails = {
             room,
@@ -249,10 +313,9 @@ function Bookingscreen() {
             todate,
             totalamount,
             totaldays,
-            wine, 
-            chocolate, 
+            wine,
+            chocolate,
             flowers,
-
             token
 
         }
@@ -261,8 +324,8 @@ function Bookingscreen() {
             setloading(true);
             const result = await axios.post('/api/bookings/bookroom', bookingDetails);
             setloading(false);
-            Swal.fire('Congratulations', 'Your room booked successfully', 'success').then(result=>{
-                window.location.href='/littleheavenbedandbreakfast'
+            Swal.fire('Congratulations', 'Your room booked successfully', 'success').then(result => {
+                window.location.href = '/signup'
                 return result;
             });
 
@@ -270,16 +333,30 @@ function Bookingscreen() {
             return result;
         } catch (error) {
             setloading(false);
-           Swal.fire('OOps', 'Something went wrong', 'error'); 
+            Swal.fire('OOps', 'Something went wrong', 'error');
             return console.log(error);
         }
     }
 
-   
 
     return (
 
-        <div className="m-5" data-aos="flip-left">
+        <>
+        
+        <div style={{ textAlign: 'center' }}>
+                    <br/>
+                    {/* onClick={() => setnewamount(40.00)} */}
+                            <h2>Additional Packages</h2>
+                            <br/>
+                            <h6>* Call the Cabin in advance to set up details on added packages</h6>
+                            <button id="flowers" onClick={() => setnewamount(45.99)} style={{margin: '10px', backgroundColor: IsActiveTwo ? 'darkorange' : '' }}>A dozen roses: <b>$45.99</b>.</button>
+                            <br/>
+                            <button id="wine" style={{margin: '10px', backgroundColor: IsActiveThree ? 'darkorange' : '' }}>* Coming Soon * A bottle of wine <b>$40.00</b>.</button>
+                            <br/>
+                            <button id="chocolate" onClick={() => setnewamount(39.55)} style={{margin: '10px', backgroundColor: IsActive ? 'darkorange' : '' }}>A box of delicious strawberries dipped in dark chocolate <b>$39.55</b>.</button>
+                        </div>
+
+                        <div className="m-5" data-aos="flip-left">
             {loading ? (<Loader />) : room ? (
 
                 <div className="row justify-content-center mt-5 bs">
@@ -309,8 +386,9 @@ function Bookingscreen() {
                                 { wine ? (<h5>Wine: $40.00 </h5>) : (<h5>Wine: $0.00</h5>)}
                                 { chocolate ? (<h5>Dozen Chocolate Strawberries: $39.55</h5>) : (<h5>Dozen Chocolate Strawberries: $0.00</h5>)}
                                 { flowers ? (<h5>Dozen Roses: $45.99</h5>) : (<h5>Dozen Roses: $0.00</h5>) }
-                                <h5>Total days : { totaldays } day stay</h5>
+                                <h5>Total nights : { totaldays } night stay</h5>
                                 <h5>Room Occupancy Tax: ${taxes} </h5>
+                                <h5>Room Sales Tax: ${salestax} </h5>
                                 <h5>Total Amount : {totalamount}</h5>
                                 
                                 
@@ -325,6 +403,7 @@ function Bookingscreen() {
                                 token={onToken}
                                 currency={'USD'}
                                 stripeKey="pk_live_51KWrgOEQ6YTqHunyjTvuPENEm4gD2k3W6z1hKXQqKpU1wVW88fyZ02eec3TTpdDyrHivYVdGVXbC1CKJk4776Fls00EQI9Kmbl"                    
+                                // stripeKey="pk_test_51KWrgOEQ6YTqHunyX0uoWgUrVGqOACgCQPEcX947w2u602fVYWIlA6OWheyblRORUwhc47omYPsCrQNAaV7zAtXz00XZIzQEdg"                    
                             >
                                 <div style={{paddingRight: '120px', paddingBottom: '30px'}}>
                                 <button className="btn btn-primary">Pay Now</button>
@@ -344,6 +423,8 @@ function Bookingscreen() {
             )
             }
         </div>
+        </>
+        
     )
 }
 

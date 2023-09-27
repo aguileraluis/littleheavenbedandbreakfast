@@ -23,7 +23,7 @@ const About = () => {
     <>
       <Hero slides={SliderDataThree} />
     
-      <Title title="Little Heaven Bed & Breakfast" titletwo="Explore Little Heaven Bed & Breakfast:" paragraph="Stay in the heart of Yadkin County in this elegantly-rustic Yadkin Valley Bed and Breakfast. Little Heaven Bed and Breakfast is less than an hour away from the northwestern Virginia / North Caolina state line. Views from the Blue Ridge Parkway are within driving distances. There are numerous wineries in the Yadkin Valley that you can enjoy tasing and fine dining. The outdoors will transform your soul when you experience the rawness that the Yadkin Valley has to offer. On the property, there is a pond where you can fish, there is 10 acres full of woods and open space to explore with yourself or your loved ones. Aside from the mountains, we have endless rivers and lakes around the area as well. Little Heaven Bed & Breakfast welcomes you, and thanks you from the bottom of our hearts for the opportunity to provide you with a heavenly experience." />
+      <Title title="Little Heaven Bed & Breakfast" titletwo="Explore Little Heaven Bed & Breakfast:" paragraph="Stay in the heart of Yadkin County in this elegantly-rustic Yadkin Valley Bed and Breakfast. Little Heaven Bed and Breakfast is less than an hour away from the northwestern Virginia / North Caolina state line, Winston-Salem, Greensboro and High Point and just over an hour away from Charlotte. Views from the Blue Ridge Parkway are within driving distances. There are numerous wineries in the Yadkin Valley that you can enjoy tasing and fine dining. The outdoors will transform your soul when you experience the rawness that the Yadkin Valley has to offer. On the property, there is a pond where you can fish, there is 10 acres full of woods and open space to explore with yourself or your loved ones. Aside from the mountains, we have endless rivers and lakes around the area as well. Little Heaven Bed & Breakfast welcomes you, and thanks you from the bottom of our hearts for the opportunity to provide you with a heavenly experience." /> 
       <br />
   
       
@@ -112,15 +112,15 @@ const About = () => {
             </Row>
             <br />
             <br />
-            <TextSection paragraph="The Cabin is a very inviting, warm, spacious, and exquisite with all of it's brand new upgrades. Every room has been completely renovated from floor to ceiling. With every detail meticulously thought out, you will feel like arriving home everytime you step foot onto the Bed & Breakfast. The comforts and amenities allow you to feel the luxury of fine lodging. The fireplaces in every room warm up your body and soul. The views are spectacular and the nature at your footsteps is why we pride ourselves in our beautiful location. The property has a pond where you can catch fish or just enjoy the view around the campfire.
+            <TextSection paragraph="The Cabin is a very inviting, warm, spacious, and exquisite space with all of it's brand-new upgrades. Every room has been completely renovated from floor to ceiling. With every detail meticulously thought out, you will feel like arriving home every time you step foot onto the Bed & Breakfast. The comforts and amenities allow you to feel the luxury of fine lodging. The fireplaces in every room warm up your body and soul. The views are spectacular and the nature at your footsteps is why we pride ourselves in our beautiful location. The property has a pond where you can catch fish or just enjoy the view around the campfire.
             
-            There is WiFi throughout the cabin so don't worry about being completley off the grid if that's not your thing. For those that do love being off the grid, we have ten prestine acres of wilderness and open fields. The deck on the front overlooks the pond and the endless open skies. Once you've soaked enough wilderness, you can rest your self on the comfortable beds that the Cabin has to offer. 
+            There is Wi-Fi throughout the cabin so don't worry about being completely off the grid if that's not your thing. For those that do love being off the grid, we have ten pristine acres of wilderness and open fields. The deck on the front overlooks the pond and the endless open skies. Once you've soaked enough wilderness, you can rest your self on the comfortable beds that the Cabin has to offer. 
             
-            Every room has either a King or Queen size bed with premium sheets and comforters, a 52in TV, a fireplace, office space, a shower or a tub, your own cooling system and magnificent views of the mountains.
+            Every room has either a King or Queen size bed with premium sheets and comforters, a high definition 52in TV, a fireplace, office space, a shower or a tub, your own cooling system and magnificent views of the mountains.
             
-            In the main living area you will find an open floorplan that opens up to the second story allowing you to open up to the beautiful views. There is a kitchn bar, a conference room with dining tables, booths, and chairs, and a TV and fireplace in the main living room. 
+            In the main living area you will find an open floor plan that opens up to the second story allowing you to open up to the beautiful views. There is a kitchen bar, a conference room with dining tables, booths, and chairs, and a high definition TV and fireplace in the main living area. 
             
-            Give Little Heaven Bed & Breakfast a chance, you will be happy you did!" />
+            Give Little Heaven Bed & Breakfast a chance, you will be happy you did! We believe that if you stay ONCE you WILL want to come back time and time again." />
           </div>
 
         </section>

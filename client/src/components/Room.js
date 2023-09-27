@@ -3,6 +3,7 @@ import { Modal, Button, Carousel } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import AOS from 'aos';
 import 'aos/dist/aos.css'; 
+import moment from 'moment';
 import Features from '../components/Features';
 
 AOS.init({
@@ -14,6 +15,10 @@ function Room({ room, fromdate, todate }) {
     const [show, setShow] = useState(false);
     const handleClose = () => setShow(false);
     const handleShow = () => setShow(true);
+
+    let total = (moment.duration((moment(todate, 'MM-DD-YYYY')).diff(moment(fromdate, 'MM-DD-YYYY'))).asDays()); 
+
+
     return (
         <div key={room.name} style={{height: '50%', textAlign: 'center', marginBottom: '8px'}} className="row" data-aos='fade-up'>
 
@@ -24,12 +29,13 @@ function Room({ room, fromdate, todate }) {
             
                 <div style={{ float: "right", color: 'orange', textAlign: 'center', marginBottom: '10px', paddingRight: '5%', paddingTop: '10px', paddingBottom: '20px'}}>
 
-
+                
                 {(
                     <Link to={`/book/${room._id}/${fromdate}/${todate}`}>
                     
+                    { total >= 1 ?
                 <button style={{marginTop: '10px', marginLeft: '8px'}}className="btn btn-primary">Book Now</button>
-        
+                       :  ""}
                 </Link>
                 )} 
                    

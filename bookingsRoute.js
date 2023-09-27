@@ -2,7 +2,8 @@ const express = require('express');
 const router = express.Router(); 
 const moment = require("moment"); 
 const { v4: uuidv4 } = require('uuid');
-const stripe = require("stripe")('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')   
+const stripe = require("stripe")('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')   
+// const stripe = require("stripe")('sk_test_51KWrgOEQ6YTqHunycGNTeLAPX3Q8nqPDp9JIOElgp5Z4wLnufaa8VtZJTHm34MRDDsnZ3cGJdj7YsTVWATvAL1ui00I5io549i')   
 
 const Booking = require("./models/booking"); 
 const Room = require('./models/room');
@@ -48,8 +49,8 @@ router.post('/bookroom', async (req, res) => {
                 const newbooking = new Booking({
                     room : room.name, 
                     roomid: room._id, 
-                    fromdate : moment(fromdate, 'DD-MM-YYYY'),
-                    todate : moment(todate, 'DD-MM-YYYY'),
+                    fromdate : (moment(fromdate, 'MM-DD-YYYY')),
+                    todate : (moment(todate, 'MM-DD-YYYY')),
                     wine : wine, 
                     chocolate : chocolate,
                     flowers : flowers,
@@ -65,7 +66,7 @@ router.post('/bookroom', async (req, res) => {
         
                 const roomtemp = await Room.findOne({_id : room._id}); 
         
-                roomtemp.currentbookings.push({bookingid : booking._id, wine : wine, chocolate : chocolate, flowers : flowers, fromdate : moment(fromdate, 'DD-MM-YYYY'), todate : moment(todate, 'DD-MM-YYYY'), status : booking.status}); 
+                roomtemp.currentbookings.push({bookingid : booking._id, wine : wine, chocolate : chocolate, flowers : flowers, fromdate : moment(fromdate, 'MM-DD-YYYY'), todate : moment(todate, 'MM-DD-YYYY'), status : booking.status}); 
         
                 await roomtemp.save();
         }

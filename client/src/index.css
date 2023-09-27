@@ -19,6 +19,26 @@ h3 {
   font-size: 40px !important;
 }
 
+
+.ant-picker-panels {
+  
+  @media (max-width: 700px) {
+    display: flex !important;
+    flex-direction: column !important;
+  }
+}
+
+.dropdown-class-name-1 {
+
+@media (max-width: 700px) {
+  display: 'inline-block';
+  flex-direction: column;
+  width: 80%;
+  height: 200%;
+  overflow: visible;
+}
+}
+
 .photogallery {
   display: inline-block;
   height: auto;

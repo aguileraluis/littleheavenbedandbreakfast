@@ -88,8 +88,8 @@ function Cards() {
                         />
                         <CardItem
                             src={image8}
-                            text="Whatever the taste you love, we have it. Enjoy a delicious bottle of local wine"
-                            label="Bottle of Wine"
+                            text="* We will soon be offering wine * Whatever the taste you love, we have it. We are working so that you can soon enjoy a delicious bottle of local wine"
+                            label=" Bottle of Wine"
                             texttwo="from $25.00 to $85.00"
                           
                         />

@@ -3,7 +3,7 @@ import styled, { css } from 'styled-components';
 import { Link } from 'react-router-dom';
 import { Button } from './Button';
 import { IoMdArrowRoundForward } from 'react-icons/io';
-import { FaInstagram, FaFacebookF, FaLinkedIn, FaTiktok } from 'react-icons/fa';
+import { FaInstagram, FaFacebookF, FaTiktok } from 'react-icons/fa';
 import image from '../images/FooterImage.jpg';
 
 const Section = styled.section`
@@ -125,7 +125,7 @@ const Footer = () => {
             <h5 style={{ textAlign: 'center' }}><b>Address:  </b>1065 Tuckda Way </h5> <h5 style={{ textAlign: 'center' }}>Hamptonville NC, 27020</h5>
             <h5 style={{ textAlign: 'center' }}><b>Email:  </b>littleheavenlodge@gmail.com</h5>
             <h5 style={{ textAlign: 'center' }}><b>Cabin Phone Number:  </b>336-468-2300</h5>
-            <h5 style={{ textAlign: 'center' }}><b>Boutique Phone Number:  </b>336-468-2301</h5>
+            <h5 style={{ textAlign: 'center' }}><b>Boutique Phone Number:  </b>336-615-5173</h5>
           </Quote>
           <FooterInfo>
             <Link to="/littleheavenbedandbreakfast"><h4>View Our Rooms</h4></Link>

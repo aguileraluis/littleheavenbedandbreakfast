@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/static/css/main.35b4dfc2.css",
-    "main.js": "/static/js/main.6f661209.js",
+    "main.css": "/static/css/main.639998b8.css",
+    "main.js": "/static/js/main.0c10ad3c.js",
     "static/js/787.c4e7f8f9.chunk.js": "/static/js/787.c4e7f8f9.chunk.js",
     "static/media/finish.MP4": "/static/media/finish.d6a32658c6b1a9ac67db.MP4",
     "static/media/start.MP4": "/static/media/start.4b63748f6feaf8f94982.MP4",
@@ -109,7 +109,6 @@
     "static/media/partytwo.jpg": "/static/media/partytwo.b21fc7e1fbf4c8a28b81.jpg",
     "static/media/lovetwo.jpg": "/static/media/lovetwo.12f5ffb86849191f416d.jpg",
     "static/media/water.jpg": "/static/media/water.90860f2fe6a6847fdf55.jpg",
-    "static/media/HomeOne.jpg": "/static/media/HomeOne.5ffe8a7e4547988f600d.jpg",
     "static/media/Imagesix.jpg": "/static/media/Imagesix.85232b902fb1778e8ebe.jpg",
     "static/media/lovefour.jpg": "/static/media/lovefour.26f369de574135aec47f.jpg",
     "static/media/air.jpg": "/static/media/air.4abc09be3d74ec9ac6a1.jpg",
@@ -154,12 +153,12 @@
     "static/media/shopping.jpg": "/static/media/shopping.40dc02d4eab5a5570fea.jpg",
     "static/media/festivals.jpg": "/static/media/festivals.45f74fc8ef35c7296336.jpg",
     "index.html": "/index.html",
-    "main.35b4dfc2.css.map": "/static/css/main.35b4dfc2.css.map",
-    "main.6f661209.js.map": "/static/js/main.6f661209.js.map",
+    "main.639998b8.css.map": "/static/css/main.639998b8.css.map",
+    "main.0c10ad3c.js.map": "/static/js/main.0c10ad3c.js.map",
     "787.c4e7f8f9.chunk.js.map": "/static/js/787.c4e7f8f9.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.35b4dfc2.css",
-    "static/js/main.6f661209.js"
+    "static/css/main.639998b8.css",
+    "static/js/main.0c10ad3c.js"
   ]
 }

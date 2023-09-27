@@ -15,7 +15,7 @@ const Localwineriesscreen = () => {
     <h2>Explore all the abundance of wineries around the area!</h2>
     <br/>
       <h4 style={{textAlign: 'center', color: 'darkorange'}}>Our Favorite Yadkin Valley Wineries</h4>
-      <TextSection paragraph="With seven counties in the Yadkin Valley, we have more than 35 local wineries. While most North Carolina wines were typically sweet muscadine, it is in the Yadkin Valley that you can find dry and delicious European-style wines. Enjoy fine dining as well as wine with most of these places. The following links will navigate you to somoe of the best pages for finding local wineries."/>
+      <TextSection paragraph="With seven counties in the Yadkin Valley, we have more than 35 local wineries. While most North Carolina wines were typically sweet muscadine, it is in the Yadkin Valley that you can find dry and delicious European-style wines. Enjoy fine dining as well as wine with most of these places. The following links will navigate you to some of the best pages for finding local wineries."/>
       <section className="section-title">
         <ul className="section-title">
           <li className="section-title">

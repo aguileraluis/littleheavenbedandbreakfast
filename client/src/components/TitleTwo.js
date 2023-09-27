@@ -15,12 +15,14 @@ export default function TitleTwo({title, paragraph}) {
           data-aos-anchor-placement="center bottom"
           style={{fontSize: '1.5rem', color: 'black'}}
         >{paragraph}</p>
+        <br/>
+        <br/>
   
-        <h2 data-aos='fade-right'
+        {/* <h3 data-aos='fade-right'
             data-aos-duration='1000'
             data-aos-anchor-placement='center bottom'
             style={{color: 'rgba(240, 116, 8, 0.848)'}}
-        >Check Room Availabilty Below</h2>
+        >* Minimum Two Night Stay *</h3> */}
     </div>
   )
 }

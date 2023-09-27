@@ -1,6 +1,6 @@
 import './App.css';
 import React, {useState, useEffect, useLayoutEffect} from 'react';
-import { Route, Routes, useLocation, Navigate } from 'react-router-dom'; 
+import { Route, Routes, useLocation } from 'react-router-dom'; 
 import Homescreen from './screens/Homescreen';
 import Bookingscreen from './screens/Bookingscreen';
 import Adminscreen from './screens/Adminscreen';
@@ -23,9 +23,7 @@ import Policiesscreen from './screens/Policiesscreen';
 import Ourstoryscreen from './screens/Ourstoryscreen';
 import Diningscreen from './screens/Diningscreen';
 import Thingstodoscreen from './screens/Thingstodoscreen';
-import Historicsitesscreen from './screens/Historicsitesscreen';
 import Localwineriesscreen from './screens/Localwineriesscreen';
-import Artsscreen from './screens/Artsscreen';
 import Boutiquescreen from './screens/Boutiquescreen';
 
 
@@ -72,9 +70,7 @@ function App() {
       <Route path="/story" element={<Ourstoryscreen />}/>
       <Route path="/dining" element={<Diningscreen />}/>
       <Route path="/thingstodo" element={<Thingstodoscreen />}/>
-      <Route path="/historicsites" element={<Historicsitesscreen />}/>
       <Route path="/localwineries" element={<Localwineriesscreen />}/>
-      <Route path="/arts" element={<Artsscreen />}/>
       <Route path="/boutique" element={<Boutiquescreen />}/>
       <Route path="*" element={<Thelodgescreen />} />
       <Route path="/" element={<Thelodgescreen />} />

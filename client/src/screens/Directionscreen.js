@@ -34,7 +34,7 @@ const Directionscreen = () => {
       <br/>
       <h1>Arriving at Little Heaven Bed & Breakfast</h1>
       <br/>
-      <h4 style={{textAlign: 'center', color: 'darkorange'}}>The drive up to the Cabin is breathtaking</h4>
+      <h4 style={{textAlign: 'center', color: 'darkorange'}}>The drive up to the Cabin is breathtaking!</h4>
     <div className="section-title">
     <video style={{width: '50%', height: '50%', position: 'relative', display: 'inline-block', marginRight: '1rem'}} src={start} controls />
       </div>

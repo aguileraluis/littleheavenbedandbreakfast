@@ -20,7 +20,7 @@ const Diningscreen = () => {
     <br/>
     <h1>Yadkin Valley Dining</h1>
       <h4 style={{textAlign: 'center', color: 'darkorange'}}>Our Favorite Yadkin Valley NC Restaurants</h4>
-      <TextSection paragraph="The Yadkin Valley is North Carolina’s first federally-recognized American Viticulture Area (AVA). There are many cities that make up the Yadkin Valley. Here is a list of restaurants that are spread out throughout the Yadkin Valley. Whether you want to eat small, local or go out to a fine dining restauarant, the Yadkin Valley will be sure to serve you what you are looking for. "/>
+      <TextSection paragraph="The Yadkin Valley is North Carolina’s first federally-recognized American Viticulture Area (AVA). There are many cities that make up the Yadkin Valley. Here is a list of restaurants that are spread out throughout the Yadkin Valley. Whether you want to eat small, local or go out to a fine dining restaurant, the Yadkin Valley will be sure to serve you what you are looking for. "/>
       <section className="section-title">
         <ul className="section-title">
           <li className="section-title">
