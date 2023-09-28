@@ -84,6 +84,8 @@ function Homescreen() {
                 fromdate = moment(fromdate, "MM-DD-YYYY").add(1, 'days');
             }
 
+            console.log(days)
+
             for (var day of days) {
                 var Monday = "Mon";
                 var Tuesday = "Tue";
@@ -299,12 +301,15 @@ function Homescreen() {
                     var bookingfromdate = (moment((booking.fromdate)._i)._i);
                     var bookingtodate = (moment((booking.todate)._i)._i);
 
-                    if (
-                        !moment(moment(bookingfromdate, "MM-DD-YYYY")).isBetween(moment(fromdate, "MM-DD-YYYY"), moment(todate, "MM-DD-YYYY"))
-                        && !moment(moment(bookingtodate, "MM-DD-YYYY")).isBetween(moment(fromdate, "MM-DD-YYYY"), moment(todate, "MM-DD-YYYY"))
+                    fromdate = moment(fromdate, "MM-DD-YYYY")._i;
 
-                        && !moment(moment(fromdate, "MM-DD-YYYY")).isBetween(moment(bookingfromdate, "MM-DD-YYYY"), moment(bookingtodate, "MM-DD-YYYY"))
+                    if (
+
+                        !moment(moment(fromdate, "MM-DD-YYYY")).isBetween(moment(bookingfromdate, "MM-DD-YYYY"), moment(bookingtodate, "MM-DD-YYYY"))
                         && !moment(moment(todate, "MM-DD-YYYY")).isBetween(moment(bookingfromdate, "MM-DD-YYYY"), moment(bookingtodate, "MM-DD-YYYY"))
+                        && !moment(moment(bookingfromdate, "MM-DD-YYYY")).isBetween(moment(fromdate, "MM-DD-YYYY"), moment(todate, "MM-DD-YYYY"))
+                        && !moment(moment(bookingtodate, "MM-DD-YYYY")).isBetween(moment(fromdate, "MM-DD-YYYY"), moment(todate, "MM-DD-YYYY"))
+                        
 
                         && !moment(moment(fromdate, 'MM-DD-YYYY')).isSame(moment(bookingfromdate, "MM-DD-YYYY"))
                         && !moment(moment(fromdate, 'MM-DD-YYYY')).isSame(moment(bookingtodate, "MM-DD-YYYY"))
@@ -321,7 +326,6 @@ function Homescreen() {
                     if (availability == true || room.currentbookings.length == 0) {
                         temprooms.push(room);
                     }
-                    console.log(booking)
                     bookedrooms.push(booking);
                 }
             }
@@ -330,13 +334,10 @@ function Homescreen() {
         }
         
         setrooms(temprooms);
-        console.log(temprooms);
-        console.log(duplicaterooms)
         var merged = duplicaterooms.concat(temprooms);
         // var available = merged.sort((a, b) => (a.name > b.name) ? 1 : -1);
         var available = merged.filter(item => !temprooms.some(itemremoved => itemremoved._id === item._id));
-        
-        console.log(available);
+
         setrooms(available);
     }
    
