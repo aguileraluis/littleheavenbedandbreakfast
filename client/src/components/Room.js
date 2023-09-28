@@ -15,8 +15,12 @@ function Room({ room, fromdate, todate }) {
     const [show, setShow] = useState(false);
     const handleClose = () => setShow(false);
     const handleShow = () => setShow(true);
+    fromdate = moment(fromdate, "MM-DD-YYYY")._i;
 
-    let total = (moment.duration((moment(todate, 'MM-DD-YYYY')).diff(moment(fromdate, 'MM-DD-YYYY'))).asDays()); 
+    var total = (moment.duration((moment(todate, 'MM-DD-YYYY')).diff(moment(fromdate, 'MM-DD-YYYY'))).asDays()); 
+    console.log(todate);
+    console.log(fromdate);
+    console.log(total)
 
 
     return (

@@ -17,6 +17,12 @@ export default function TitleTwo({title, paragraph}) {
         >{paragraph}</p>
         <br/>
         <br/>
+
+        <h3 data-aos='fade-right'
+            data-aos-duration='1000'
+            data-aos-anchor-placement='center bottom'
+            style={{color: 'rgba(240, 116, 8, 0.848)'}}
+        >Search Rooms</h3>
   
         {/* <h3 data-aos='fade-right'
             data-aos-duration='1000'
