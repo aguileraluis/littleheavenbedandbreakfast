@@ -47,7 +47,6 @@ color: #fff;
 font-style: italic;
 font-weight: bold;
 margin-top: 30px;
-margin-left: 20px;
 position: sticky;
 `;
 

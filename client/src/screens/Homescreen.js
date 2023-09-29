@@ -107,8 +107,12 @@ function Homescreen() {
 
                 for (var cuarto of rooms) {
 
-                    if (cuarto.name.includes("Joy")) {
 
+
+
+
+                    if (cuarto.name.includes("Joy")) {
+                            cuarto.totalamount = 0;
                         if (date.includes(Sunday)) {
 
                             joytotalprice += 279
@@ -135,9 +139,8 @@ function Homescreen() {
                             joytotalprice += 299
                         }
 
-                        cuarto.totalamount = joytotalprice;
-
                         localStorage.setItem('Joy', JSON.stringify(joytotalprice));
+                        cuarto.totalamount = joytotalprice;
 
                     }
                     if (cuarto.name.includes("Faith")) {
@@ -302,6 +305,7 @@ function Homescreen() {
 
             // fromdate = moment(fromdate, "MM-DD-YYYY")._i;
             if (room.currentbookings.length > 0) {
+
                 // fromdate = moment(fromdate, "MM-DD-YYYY")._i;
                 // setfromdate((moment(fromdate, "MM-DD-YYYY")._i))
                 // console.log(fromdate);
@@ -314,7 +318,7 @@ function Homescreen() {
                     fromdate = (moment(fromdate, "MM-DD-YYYY")._i)
                     todate = (moment(todate, "MM-DD-YYYY")._i)
 
-                   
+
 
                     if (
                         !moment(moment(fromdate, "MM-DD-YYYY")).isBetween(moment(bookingfromdate, "MM-DD-YYYY"), moment(bookingtodate, "MM-DD-YYYY"))
@@ -332,11 +336,13 @@ function Homescreen() {
                     } else {
                         setavailability(false);
                         temprooms.push(room);
+
                     }
 
                     if (availability === true || room.currentbookings.length === 0) {
-                        temprooms.push(room);
+                        // temprooms.push(room);
                         bookedrooms.push(booking);
+
                     }
 
 
@@ -345,7 +351,7 @@ function Homescreen() {
 
 
             }
-          
+
             days = [];
 
             // setduplicaterooms(bookedrooms);
@@ -353,12 +359,12 @@ function Homescreen() {
         }
 
         // setrooms(temprooms);
-        
+
         var merged = duplicaterooms.concat(temprooms);
         // var available = merged.sort((a, b) => (a.name > b.name) ? 1 : -1);
         var available = merged.filter(item => !temprooms.some(itemremoved => itemremoved._id === item._id));
 
-       
+
         if (available.length === 0) {
             Swal.fire('We are sorry!', 'There are no available rooms for selected dates, please try again', 'error').then(result => {
                 window.location.href = '/littleheavenbedandbreakfast'
@@ -402,58 +408,58 @@ function Homescreen() {
 
         // if (e !== 'All') {
 
-            if (present === true) {
-                if (e === 'King Bed') {
-                    settype(e);
+        if (present === true) {
+            if (e === 'King Bed') {
+                settype(e);
 
-                    var newtemprooms = availableresults.filter(room => room.type.toLowerCase() === e.toLowerCase());
+                var newtemprooms = availableresults.filter(room => room.type.toLowerCase() === e.toLowerCase());
 
-                    newtemprooms.forEach(item => {
-                        kingrooms.push(item);
-                    })
-                    setrooms(kingrooms);
-                } else if (e === 'Queen Bed') {
-                    settype(e);
+                newtemprooms.forEach(item => {
+                    kingrooms.push(item);
+                })
+                setrooms(kingrooms);
+            } else if (e === 'Queen Bed') {
+                settype(e);
 
-                    var newrooms = availableresults.filter(room => room.type.toLowerCase() === e.toLowerCase());
+                var newrooms = availableresults.filter(room => room.type.toLowerCase() === e.toLowerCase());
 
-                    newrooms.forEach(item => {
-                        queenrooms.push(item);
-                    })
-                    setrooms(queenrooms);
-                } 
+                newrooms.forEach(item => {
+                    queenrooms.push(item);
+                })
+                setrooms(queenrooms);
+            }
 
-                else if (e === 'All') {
-                    settype(e)
-                    setrooms(availableresults);
-                }
-               
-            } if (present === false) {
-                if (e === 'King Bed') {
-                    settype(e);
+            else if (e === 'All') {
+                settype(e)
+                setrooms(availableresults);
+            }
 
-                    var secondnewtemprooms = availablesearchrooms.filter(room => room.type.toLowerCase() === e.toLowerCase());
+        } if (present === false) {
+            if (e === 'King Bed') {
+                settype(e);
 
-                    secondnewtemprooms.forEach(item => {
-                        kingrooms.push(item);
-                    })
-                    setrooms(kingrooms);
-                } else if (e === 'Queen Bed') {
-                    settype(e);
+                var secondnewtemprooms = availablesearchrooms.filter(room => room.type.toLowerCase() === e.toLowerCase());
 
-                    var secondnewrooms = availablesearchrooms.filter(room => room.type.toLowerCase() === e.toLowerCase());
+                secondnewtemprooms.forEach(item => {
+                    kingrooms.push(item);
+                })
+                setrooms(kingrooms);
+            } else if (e === 'Queen Bed') {
+                settype(e);
 
-                    secondnewrooms.forEach(item => {
-                        queenrooms.push(item);
-                    })
-                    setrooms(queenrooms);
-                } 
+                var secondnewrooms = availablesearchrooms.filter(room => room.type.toLowerCase() === e.toLowerCase());
 
-                else if (e === 'All') {
-                    settype(e)
-                    setrooms(availableresults);
-                }
-               
+                secondnewrooms.forEach(item => {
+                    queenrooms.push(item);
+                })
+                setrooms(queenrooms);
+            }
+
+            else if (e === 'All') {
+                settype(e)
+                setrooms(availableresults);
+            }
+
 
             // if (e === 'King Bed' && present) {
             //     settype(e);
@@ -490,7 +496,7 @@ function Homescreen() {
         }
         setkingrooms([]);
         setqueenrooms([]);
-        
+
     }
 
     const disablePastDates = current => current && current < moment().endOf("day");

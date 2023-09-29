@@ -398,7 +398,6 @@ function Bookingscreen() {
 
                         <div style={{ float: "right" }}>
 
-                        {totalamount === 0 ? (
                             <StripeCheckout
                                 amount={totalamount * 100}
                                 token={onToken}
@@ -411,7 +410,7 @@ function Bookingscreen() {
                                 </div>
                     
                             </StripeCheckout>
-                        ) : <><di><p>Please select your dates</p></di></>}
+                       
 
                         </div>
 
