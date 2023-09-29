@@ -30,8 +30,13 @@ function Homescreen() {
 
     const [duplicaterooms, setduplicaterooms] = useState([]);
     const [bookedrooms, setbookedrooms] = useState([]);
+    const [availablesearchrooms, setavailablesearchrooms] = useState([]);
+    const [availableresults, setavailableresults] = useState([]);
+    const [kingrooms, setkingrooms] = useState([]);
+    const [queenrooms, setqueenrooms] = useState([]);
 
     const [searchkey, setsearchkey] = useState('');
+    const [present, setpresent] = useState(false);
     const [type, settype] = useState('All')
 
     var temprooms = [];
@@ -70,7 +75,7 @@ function Homescreen() {
 
         var availability = false;
 
-        setrooms(temprooms)
+        setrooms(duplicaterooms)
 
         for (const room of duplicaterooms) {
 
@@ -309,8 +314,7 @@ function Homescreen() {
                     fromdate = (moment(fromdate, "MM-DD-YYYY")._i)
                     todate = (moment(todate, "MM-DD-YYYY")._i)
 
-                    console.log(fromdate)
-                    console.log(todate)
+                   
 
                     if (
                         !moment(moment(fromdate, "MM-DD-YYYY")).isBetween(moment(bookingfromdate, "MM-DD-YYYY"), moment(bookingtodate, "MM-DD-YYYY"))
@@ -320,6 +324,7 @@ function Homescreen() {
                         && !moment(moment(fromdate, 'MM-DD-YYYY')).isSame(moment(bookingfromdate, "MM-DD-YYYY"))
                         // && !moment(moment(fromdate, 'MM-DD-YYYY')).isSame(moment(bookingtodate, "MM-DD-YYYY"))
                         && !moment(moment(todate, 'MM-DD-YYYY')).isSame(moment(bookingfromdate, "MM-DD-YYYY"))
+                        && !moment(moment(fromdate, 'MM-DD-YYYY')).isSame(moment(todate, 'MM-DD-YYYY'))
                         // && !moment(moment(todate, 'MM-DD-YYYY')).isSame(moment(bookingtodate, "MM-DD-YYYY"))
                     ) {
                         setavailability(true);
@@ -333,14 +338,14 @@ function Homescreen() {
                         temprooms.push(room);
                         bookedrooms.push(booking);
                     }
-                    
+
 
 
                 }
 
-                
+
             }
-            console.log(bookedrooms);
+          
             days = [];
 
             // setduplicaterooms(bookedrooms);
@@ -348,22 +353,24 @@ function Homescreen() {
         }
 
         // setrooms(temprooms);
-        console.log(temprooms);
-        console.log(duplicaterooms)
+        
         var merged = duplicaterooms.concat(temprooms);
         // var available = merged.sort((a, b) => (a.name > b.name) ? 1 : -1);
         var available = merged.filter(item => !temprooms.some(itemremoved => itemremoved._id === item._id));
 
-        console.log(available);
+       
         if (available.length === 0) {
-            Swal.fire('We are sorry!', 'All rooms are currently booked for selected dates', 'error').then(result => {
+            Swal.fire('We are sorry!', 'There are no available rooms for selected dates, please try again', 'error').then(result => {
                 window.location.href = '/littleheavenbedandbreakfast'
             });
         }
         setrooms(available);
-        
+        setavailablesearchrooms(available)
+
         days = [];
         setbookedrooms([]);
+        setpresent(false);
+        setsearchkey("")
 
     }
 
@@ -371,27 +378,119 @@ function Homescreen() {
 
     function filterBySearch() {
 
-        var newtemprooms = duplicaterooms.filter(room => room.description.toLowerCase().includes(searchkey.toLowerCase()));
 
-        setrooms(newtemprooms);
+        var newtemprooms = rooms.filter(room => room.description.toLowerCase().includes(searchkey.toLowerCase()));
+
+        newtemprooms.forEach(room => {
+            temprooms.push(room);
+        })
+
+        // setrooms(temprooms);
+
+        if (searchkey.length === 0) {
+            setrooms(availablesearchrooms);
+            setpresent(false);
+        } else {
+            setrooms(temprooms);
+            setavailableresults(temprooms);
+            setpresent(true);
+        }
+
     }
 
     function filterByType(e) {
 
-        if (e !== 'All') {
+        // if (e !== 'All') {
 
-            settype(e);
+            if (present === true) {
+                if (e === 'King Bed') {
+                    settype(e);
 
-            var newtemprooms = duplicaterooms.filter(room => room.type.toLowerCase() === e.toLowerCase());
+                    var newtemprooms = availableresults.filter(room => room.type.toLowerCase() === e.toLowerCase());
 
-            setrooms(newtemprooms);
+                    newtemprooms.forEach(item => {
+                        kingrooms.push(item);
+                    })
+                    setrooms(kingrooms);
+                } else if (e === 'Queen Bed') {
+                    settype(e);
 
+                    var newrooms = availableresults.filter(room => room.type.toLowerCase() === e.toLowerCase());
 
-        } else {
-            settype("All");
-            setrooms(duplicaterooms);
+                    newrooms.forEach(item => {
+                        queenrooms.push(item);
+                    })
+                    setrooms(queenrooms);
+                } 
 
+                else if (e === 'All') {
+                    settype(e)
+                    setrooms(availableresults);
+                }
+               
+            } if (present === false) {
+                if (e === 'King Bed') {
+                    settype(e);
+
+                    var secondnewtemprooms = availablesearchrooms.filter(room => room.type.toLowerCase() === e.toLowerCase());
+
+                    secondnewtemprooms.forEach(item => {
+                        kingrooms.push(item);
+                    })
+                    setrooms(kingrooms);
+                } else if (e === 'Queen Bed') {
+                    settype(e);
+
+                    var secondnewrooms = availablesearchrooms.filter(room => room.type.toLowerCase() === e.toLowerCase());
+
+                    secondnewrooms.forEach(item => {
+                        queenrooms.push(item);
+                    })
+                    setrooms(queenrooms);
+                } 
+
+                else if (e === 'All') {
+                    settype(e)
+                    setrooms(availableresults);
+                }
+               
+
+            // if (e === 'King Bed' && present) {
+            //     settype(e);
+            //     var newtemprooms = availablesearchrooms.filter(room => room.type.toLowerCase() === e.toLowerCase());
+            //     newtemprooms.forEach(room => {
+            //         kingrooms.push(room);
+
+            //     })
+            //     setrooms(kingrooms);
+
+            // } else {
+            //     settype(e);
+            //     setrooms(d);
+            // }
+
+            // if (e === 'Queen Bed') {
+            //     settype(e);
+            //     var secondnewtemprooms = availablesearchrooms.filter(room => room.type.toLowerCase() === e.toLowerCase());
+            //     secondnewtemprooms.forEach(room => {
+            //         queenrooms.push(room);
+
+            //     })
+            //     setrooms(queenrooms);
+
+            // } else {
+            // settype("All");
+            // if (present === true) {
+            //     setrooms(availableresults)
+            // } else {
+            //     setrooms(availablesearchrooms);
+            // }
+
+            // setrooms(availablesearchrooms);
         }
+        setkingrooms([]);
+        setqueenrooms([]);
+        
     }
 
     const disablePastDates = current => current && current < moment().endOf("day");
@@ -409,12 +508,7 @@ function Homescreen() {
 
                     <div className="row mt-12 bs justify-content-center" style={{ width: 'auto', height: 'auto', position: 'relative' }} data-aos="flip-up">
 
-                        <div className="col-md-4" >
-                            <input type="text" className="form-control" placeholder="search rooms"
-                                value={searchkey} onChange={(e) => { setsearchkey(e.target.value) }} onKeyUp={filterBySearch}
-                            />
-                        </div>
-                        <br />
+
                         <div className="col-md-5">
                             <div className='form-control'>
                                 <RangePicker
@@ -427,15 +521,23 @@ function Homescreen() {
                             </div>
                         </div>
                         <br />
-                        <div className="col-md-3">
-                            <select className="form-control" value={type} onChange={(e) => { filterByType(e.target.value) }}>
-                                <option value="All">All</option>
-                                <option value="King Bed">King Bed</option>
-                                <option value="Queen Bed">Queen Bed</option>
-                            </select>
+
+
+                        <div className="col-md-4" >
+                            <input type="text" className="form-control" placeholder="search rooms"
+                                value={searchkey} onChange={(e) => { setsearchkey(e.target.value) }} onKeyUp={filterBySearch}
+                            />
                         </div>
-
-
+                        <br />
+                        {present === true ? (
+                            <div className="col-md-3">
+                                <select className="form-control" value={type} onChange={(e) => { filterByType(e.target.value) }}>
+                                    <option value="All">All</option>
+                                    <option value="King Bed">King Bed</option>
+                                    <option value="Queen Bed">Queen Bed</option>
+                                </select>
+                            </div>
+                        ) : <div></div>}
                     </div>
 
 

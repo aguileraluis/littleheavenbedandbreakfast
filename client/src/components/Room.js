@@ -18,10 +18,6 @@ function Room({ room, fromdate, todate }) {
     fromdate = moment(fromdate, "MM-DD-YYYY")._i;
 
     var total = (moment.duration((moment(todate, 'MM-DD-YYYY')).diff(moment(fromdate, 'MM-DD-YYYY'))).asDays()); 
-    console.log(todate);
-    console.log(fromdate);
-    console.log(total)
-
 
     return (
         <div key={room.name} style={{height: '50%', textAlign: 'center', marginBottom: '8px'}} className="row" data-aos='fade-up'>
