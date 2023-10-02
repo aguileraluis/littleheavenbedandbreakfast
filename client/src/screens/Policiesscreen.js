@@ -36,7 +36,8 @@ const Policiesscreen = () => {
           data-aos-duration="1300"
           data-aos-anchor-placement="center bottom"
           style={{fontSize: '1.5rem', color: 'black', textAlign: 'center', paddingLeft: '1rem', paddingRight: '1rem', paddingTop: '0',paddingBottom: '0', marginLeft: '3rem', marginRight: '3rem'}}>
-          Our rooms feature a queen or king-size bed, one or two sitting chairs, a desk, a high definition TV, a tub or standing shower, toilet, an iron, ironing board, a fireplace, and windows. If you wish to request any additional items please let the cabin know with time. 
+        
+          Check in is at 3:00 p.m. every day. Our rooms feature a queen or king-size bed, one or two sitting chairs, a desk, a high definition TV, a tub or standing shower, toilet, an iron, ironing board, a fireplace, and windows. If you wish to request any additional items please let the cabin know with time. 
       </p>
       <br/>
       <b><p style={{fontSize: '1.5rem', color: 'black', textAlign: 'center', paddingLeft: '1rem', paddingRight: '1rem', paddingTop: '0',paddingBottom: '0', marginLeft: '3rem', marginRight: '3rem'}}>Children:</p></b><p data-aos="fade-right"

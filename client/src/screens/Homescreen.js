@@ -311,15 +311,10 @@ function Homescreen() {
                 // console.log(fromdate);
                 // console.log(todate);
                 for (var booking of room.currentbookings) {
-
                     var bookingfromdate = (moment((booking.fromdate)._i)._i);
                     var bookingtodate = (moment((booking.todate)._i)._i);
-
                     fromdate = (moment(fromdate, "MM-DD-YYYY")._i)
                     todate = (moment(todate, "MM-DD-YYYY")._i)
-
-
-
                     if (
                         !moment(moment(fromdate, "MM-DD-YYYY")).isBetween(moment(bookingfromdate, "MM-DD-YYYY"), moment(bookingtodate, "MM-DD-YYYY"))
                         && !moment(moment(todate, "MM-DD-YYYY")).isBetween(moment(bookingfromdate, "MM-DD-YYYY"), moment(bookingtodate, "MM-DD-YYYY"))
@@ -332,24 +327,16 @@ function Homescreen() {
                         // && !moment(moment(todate, 'MM-DD-YYYY')).isSame(moment(bookingtodate, "MM-DD-YYYY"))
                     ) {
                         setavailability(true);
-
                     } else {
                         setavailability(false);
                         temprooms.push(room);
-
                     }
-
                     if (availability === true || room.currentbookings.length === 0) {
                         // temprooms.push(room);
                         bookedrooms.push(booking);
 
                     }
-
-
-
                 }
-
-
             }
 
             days = [];
@@ -507,7 +494,7 @@ function Homescreen() {
         <>
             <div>
                 <Hero slides={SliderDataFour} />
-                <TitleTwo title="Little Heaven Bed & Breakfast" paragraph="Our Yadkin Valley Lodging includes 6 guest rooms on two different levels each with its own bathroom, writing tables and chairs. Every room has a high definition TV and a fireplace. Every room as been decorated with a different theme, still feeling rustic yet modern. All bathrooms have been completely gutted and renovated for your relaxation and enjoyment. Every room has its own AC for your convenience. The sheets and comforters are all top of the line with comfort as a priority. All rooms include an iron, ironing board, towels, body wash, shampoo, hand soap, toiletries and two robes." />
+                <TitleTwo title="Little Heaven Bed & Breakfast" paragraph="Our Yadkin Valley Lodging includes 6 guest rooms on two different levels each with its own bathroom, writing tables and chairs. Every room has a high definition TV and a fireplace. Every room as been decorated with a different theme, still feeling rustic yet modern. All bathrooms have been completely gutted and renovated for your relaxation and enjoyment. Every room has its own AC for your convenience. The sheets and comforters are all top of the line with comfort as a priority. All rooms include an iron, ironing board, towels, body wash, shampoo, hand soap, toiletries and two robes. * Check in is at 3:00 p.m. every day. Thank you for choosing to stay at Little Heaven Bed and Breakfast. We cannot wait to see you at the Cabin!" />
 
 
                 <div className="row justify-content-center mt-12" style={{ position: 'relative', margin: '30px' }}>
