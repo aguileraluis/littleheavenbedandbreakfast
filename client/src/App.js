@@ -25,7 +25,7 @@ import Diningscreen from './screens/Diningscreen';
 import Thingstodoscreen from './screens/Thingstodoscreen';
 import Localwineriesscreen from './screens/Localwineriesscreen';
 import Boutiquescreen from './screens/Boutiquescreen';
-
+import Sendemailscreen from './screens/Sendemailscreen';
 
 function App() {
     const [isOpen, setIsOpen] = useState(false);
@@ -66,6 +66,7 @@ function App() {
       <Route path="/tour" element={<Tourscreen />}/>
       <Route path="/breakfast" element={<Breakfastscreen />}/>
       <Route path="/directions" element={<Directionscreen />}/>
+      <Route path="/sendemail" element={<Sendemailscreen />}/>
       <Route path="/policies" element={<Policiesscreen />}/>
       <Route path="/story" element={<Ourstoryscreen />}/>
       <Route path="/dining" element={<Diningscreen />}/>

@@ -42,6 +42,10 @@ h3 {
 }
 }
 
+.forminput {
+  text-align: center;
+}
+
 .photogallery {
   display: inline-block;
   height: auto;

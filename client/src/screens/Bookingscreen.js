@@ -31,9 +31,6 @@ function Bookingscreen() {
     const [IsActiveThree, setIsActiveThree] = useState(false); 
 
 
-    console.log(fromdate)
-    console.log(todate)
-
     useEffect(() => {
 
         let grandtotal = 0;
@@ -41,6 +38,8 @@ function Bookingscreen() {
             try {
                 setloading(true);
                 const data = (await axios.post('/api/rooms/getroombyid', { roomid, fromdate, todate, totaldays })).data;
+                localStorage.setItem('fromdate', fromdate);
+                localStorage.setItem('todate', todate);
                 let name = (data.name);
 
                 if (name.includes("Joy")) {
@@ -60,6 +59,7 @@ function Bookingscreen() {
                     }
                     else {
                         settotalamount(0);
+                        localStorage.setItem('total', 0);
                         setflowers(flowers);
                         setchocolate(chocolate);
                         setwine(wine)
@@ -75,8 +75,8 @@ function Bookingscreen() {
                     setsales(match);
 
                     grandtotal = grandtotal += tax += salestax
-
                     settotalamount(grandtotal.toFixed(2));
+                    localStorage.setItem('total', grandtotal.toFixed(2));
 
                 } if (name.includes("Faith")) {
                     const faithtotal = JSON.parse(localStorage.getItem("Faith"))
@@ -98,6 +98,7 @@ function Bookingscreen() {
                     }
                     else {
                         settotalamount(0);
+                        localStorage.setItem('total', 0);
                         setflowers(flowers);
                         setchocolate(chocolate);
                         setwine(wine)
@@ -112,8 +113,8 @@ function Bookingscreen() {
                     setsales(match);
 
                     grandtotal = grandtotal += tax += salestax
-
                     settotalamount(grandtotal.toFixed(2));
+                    localStorage.setItem('total', grandtotal.toFixed(2));
 
                 } if (name.includes("Love")) {
                     const lovetotal = JSON.parse(localStorage.getItem("Love"))
@@ -135,6 +136,7 @@ function Bookingscreen() {
                     }
                     else {
                         settotalamount(0);
+                        localStorage.setItem('total', 0);
                         setflowers(flowers);
                         setchocolate(chocolate);
                         setwine(wine)
@@ -149,8 +151,8 @@ function Bookingscreen() {
                     setsales(match);
 
                     grandtotal = grandtotal += tax += salestax
-
                     settotalamount(grandtotal.toFixed(2));
+                    localStorage.setItem('total', grandtotal.toFixed(2));
 
                 } if (name.includes("Hope")) {
                     const hopetotal = JSON.parse(localStorage.getItem("Hope"))
@@ -172,6 +174,7 @@ function Bookingscreen() {
                     }
                     else {
                         settotalamount(0);
+                        localStorage.setItem('total', 0);
                         setflowers(flowers);
                         setchocolate(chocolate);
                    
@@ -187,8 +190,8 @@ function Bookingscreen() {
                     setsales(match);
 
                     grandtotal = grandtotal += tax += salestax
-
                     settotalamount(grandtotal.toFixed(2));
+                    localStorage.setItem('total', grandtotal.toFixed(2));
 
                 } if (name.includes("Grace")) {
                     const gracetotal = JSON.parse(localStorage.getItem("Grace"))
@@ -210,6 +213,7 @@ function Bookingscreen() {
                     }
                     else {
                         settotalamount(0);
+                        localStorage.setItem('total', 0);
                         setflowers(flowers);
                         setchocolate(chocolate);
                         setwine(wine)
@@ -224,8 +228,8 @@ function Bookingscreen() {
                     setsales(match);
 
                     grandtotal = grandtotal += tax += salestax
-
                     settotalamount(grandtotal.toFixed(2));
+                    localStorage.setItem('total', grandtotal.toFixed(2));
 
                 } if (name.includes("Peace")) {
                     const peacetotal = JSON.parse(localStorage.getItem("Peace"))
@@ -245,6 +249,7 @@ function Bookingscreen() {
                     }
                     else {
                         settotalamount(0);
+                        localStorage.setItem('total', 0);
                         setflowers(flowers);
                         setchocolate(chocolate);
                         setwine(wine)
@@ -259,10 +264,11 @@ function Bookingscreen() {
                     setsales(match);
 
                     grandtotal = grandtotal += tax += salestax
-
                     settotalamount(grandtotal.toFixed(2));
+                    localStorage.setItem('total', grandtotal.toFixed(2));
                 }
                 setroom(data)
+                localStorage.setItem("room", JSON.stringify(data));
                 setloading(false);
             } catch (error) {
                 seterror(true);
@@ -282,6 +288,7 @@ function Bookingscreen() {
             !IsActive ? setchocolate(true) : setchocolate(false);
             var total = totalamount += 39.55;
             settotalamount(total);
+            localStorage.setItem('total', total);
         }
         if (e === 45.99) {
 
@@ -289,6 +296,7 @@ function Bookingscreen() {
             !IsActiveTwo ? setflowers(true) : setflowers(false);
             var totaltwo = totalamount += 45.99;
             settotalamount(totaltwo);
+            localStorage.setItem('total', total);
         }
         if (e === 40.00) {
 
@@ -296,7 +304,7 @@ function Bookingscreen() {
             !IsActiveThree ? setwine(true) : setwine(false);
             var totalthree = totalamount += 40.00;
             settotalamount(totalthree);
-
+            localStorage.setItem('total', total);
         } 
         else {
        
@@ -324,12 +332,10 @@ function Bookingscreen() {
             setloading(true);
             const result = await axios.post('/api/bookings/bookroom', bookingDetails);
             setloading(false);
-            Swal.fire('Congratulations', 'Your room booked successfully', 'success').then(result => {
-                window.location.href = '/signup'
+            Swal.fire('Payment Accepted', 'Please provide additional details to finish booking!', 'success').then(result => {
+                window.location.href = '/sendemail'
                 return result;
             });
-
-            localStorage.clear();
             return result;
         } catch (error) {
             setloading(false);
