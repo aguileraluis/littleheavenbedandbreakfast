@@ -1,6 +1,6 @@
 import React from 'react';
-import wallone from '../images/wallone.jpg';
-import imageseven from '../images/littleheavenlodge.jpg';
+import wallone from '../images/thelodgesunset.jpg';
+import imageseven from '../images/littleheavenb&b.jpg';
 
 
 export default function Title({title, titletwo, paragraph}) {
