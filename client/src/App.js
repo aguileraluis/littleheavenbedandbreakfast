@@ -25,6 +25,7 @@ import Diningscreen from './screens/Diningscreen';
 import Thingstodoscreen from './screens/Thingstodoscreen';
 import Localwineriesscreen from './screens/Localwineriesscreen';
 import Boutiquescreen from './screens/Boutiquescreen';
+import Sendemailscreen from './screens/Sendemailscreen';
 
 
 function App() {
@@ -69,6 +70,7 @@ function App() {
       <Route path="/policies" element={<Policiesscreen />}/>
       <Route path="/story" element={<Ourstoryscreen />}/>
       <Route path="/dining" element={<Diningscreen />}/>
+      <Route path="/sendemail" element={<Sendemailscreen />}/>
       <Route path="/thingstodo" element={<Thingstodoscreen />}/>
       <Route path="/localwineries" element={<Localwineriesscreen />}/>
       <Route path="/boutique" element={<Boutiquescreen />}/>

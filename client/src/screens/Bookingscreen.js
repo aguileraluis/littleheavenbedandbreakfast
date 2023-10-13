@@ -334,7 +334,7 @@ function Bookingscreen() {
             setloading(false);
             Swal.fire('Payment Accepted', 'Please provide additional details to finish booking!', 'success').then(result => {
                 window.location.href = '/sendemail'
-                return result;
+                // return result;
             });
             return result;
         } catch (error) {
