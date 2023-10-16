@@ -33,7 +33,6 @@ const ColumnLeft = styled.div`
     justify-content: center;
     align-items: flex-start;
     line-height: 1.4;
-    padding: 1rem 2rem; 
     
     h3 {
         margin-bottom: 1rem;
@@ -45,29 +44,6 @@ const ColumnLeft = styled.div`
     }
 `;
 
-// const ColumnRight = styled.div`
-//     padding: 1rem 2rem;
-//     order: ${({ reverse }) => (reverse ? '1' : '2')};
-//     display: flex;
-//     justify-content: center;
-//     align-items: center;
-
-//     @media screen and (max-width: 768px) {
-//         order: ${({ reverse }) => (reverse ? '2' : '1')};
-//     }
-
-//     img {
-//         width: 100%;
-//         height: 100%;
-//         object-fit: cover;
-        
-
-//         @media screen and (max-width: 768px) {
-//             width: 90%; 
-//             height: 90%;
-//         } 
-//     }
-// `;
 
 const InfoSection7 = ({heading, paragraphOne, paragraphTwo, reverse, image, delay}) => {
   return (
@@ -79,12 +55,8 @@ const InfoSection7 = ({heading, paragraphOne, paragraphTwo, reverse, image, dela
                 data-aos-delay={delay}
                 data-aos-anchor-placement='center center'
             >
-                <br/> 
-                <br/>
-                <img style={{margin:"5px", height:"auto", width:"300px"}} src={image} alt="img" />           
-         
-                <br/>
-                <br/>
+
+                <img style={{height:"auto", width:"300px"}} src={image} alt="img" />           
                
             </ColumnLeft>
             {/* <ColumnRight reverse={reverse}>

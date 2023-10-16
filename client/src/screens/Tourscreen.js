@@ -12,12 +12,10 @@ function Tourscreen() {
   return (
     <>
       <Hero slides={ SliderDataSeven } />
-
       <br/>
       <br/>
       <br/>
       <br/>
-    
       <h1>Tour & Amenities</h1>
       <h4 style={{textAlign: 'center', color: 'darkorange'}}>Explore our Yadkin Valley Bed and Breakfast:</h4>
       <TextSection paragraph="Jonathan and Maria bought the cabin in December 2021 once laying eyes on the property. They had a clear vision for what the bed and breakfast would be about. Together, their dream of having a bed and breakfast started to realize itself. The cabin has six rooms, each one with its own bathroom, it has an open concept living area with high vaulted ceilings. When you arrive to the cabin the first thing you notice is the massive windows all across the front. There is a wooden porch with rocking chairs that overlook the pond on the property and the massive open sky and mountains. Upon entering, you are invited to a very open space. The kitchen is right in the middle of the cabin with the dining area in the back. Construction began immediately and everything started to come into place. The cabin now has brand-new walls, bathrooms, tiles, high speed Wi-Fi internet, massive tubs, showers, high definition TV's and views that will just take your breath away."
@@ -35,7 +33,7 @@ function Tourscreen() {
       <h4 style={{textAlign: 'center', color: 'darkorange'}}>The Exterior and Grounds</h4>
       <TextSection paragraph="Driving into the cabin you will immediately enjoy the openness all around you. 10 acres surround the cabin, giving home to a beautiful pond, ample wooded areas and vast open land. The front deck has rocking chairs so you can soak up the views and bask in the nature all around you. There is space for a bonfire near the pond, an enormity of space for outdoor events."/>
       <GalleryFour row justify-content-center mt-6/>
-      <TextSection paragraph="'I attended a baby shower at Little Heaven Bed & Breakfast and the venue was just beautiful and the food was absolutely AMAZING!! Definitely planning a stay here.' - Leslie"/>
+   
     </>
   )
 }

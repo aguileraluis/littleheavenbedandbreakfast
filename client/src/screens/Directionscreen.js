@@ -38,9 +38,6 @@ const Directionscreen = () => {
     <div className="section-title">
     <video style={{width: '50%', height: '50%', position: 'relative', display: 'inline-block', marginRight: '1rem'}} src={start} controls />
       </div>
-      <div className="section-title">
-    <video style={{width: '50%', height: '50%', position: 'relative', display: 'inline-block', marginRight: '1rem'}} src={finish} controls />
-      </div>
     </div>
   )
 }

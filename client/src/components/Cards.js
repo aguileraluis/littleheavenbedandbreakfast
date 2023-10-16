@@ -23,7 +23,7 @@ function Cards() {
                             src={image}
                             text="Visit three of your favorite  local vineyards"
                             label="Wine-Tour"
-                            texttwo="$69.00"
+                            texttwo="* Coming Soon *"
                           
                         />
 
@@ -31,14 +31,14 @@ function Cards() {
                             src={image2}
                             text="Taste eight of our red and white wines, get 10% off on your selected bottle (under 35.00)"
                             label="Wine Tasting"
-                            texttwo="$59.00"
+                            texttwo="* Coming Soon *"
                         
                         />
                         <CardItem
                             src={cake}
                             text="Enjoy a delicious cake of your choice for that special occasion or just to celebrate the sweetness all around"
                             label="Cake"
-                            texttwo="$35.00"
+                            texttwo="$49.00"
                          
 
 
@@ -73,7 +73,7 @@ function Cards() {
                             src={image6}
                             text="Enjoy the great outdoors with a perfectly designed picnic basket to crave every desire, from fruit to chocolates to wine, call the Lodge to customize yours today"
                             label="Picnic Basket"
-                            texttwo="$59.00"
+                            texttwo="$79.00"
                           
                         />
 
@@ -90,7 +90,7 @@ function Cards() {
                             src={image8}
                             text="* We will soon be offering wine * Whatever the taste you love, we have it. We are working so that you can soon enjoy a delicious bottle of local wine"
                             label=" Bottle of Wine"
-                            texttwo="from $25.00 to $85.00"
+                            texttwo="from $25.00 to $195.00"
                           
                         />
                     </ul>

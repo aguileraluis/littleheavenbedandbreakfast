@@ -14,7 +14,7 @@ import Title from '../components/Title';
 import GalleryTwo from '../components/GalleryTwo';
 import TextSection from '../components/TextSection';
 import Tour from '../images/tour.jpg';
-import Treats from '../images/treats.jpg';
+import Treats from '../images/cafe.jpg';
 import Directions from '../images/directions.jpg';
 import Policies from '../images/policy.jpg';
 

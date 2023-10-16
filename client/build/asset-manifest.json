@@ -1,9 +1,10 @@
 {
   "files": {
     "main.css": "/static/css/main.dbf7c051.css",
-    "main.js": "/static/js/main.b642bc73.js",
+    "main.js": "/static/js/main.d620cd45.js",
     "static/js/787.c4e7f8f9.chunk.js": "/static/js/787.c4e7f8f9.chunk.js",
     "static/media/littleheavenb&b.jpg": "/static/media/littleheavenb&b.d18d8c8929ac450bc9e7.jpg",
+    "static/media/cafe.jpg": "/static/media/cafe.819f4dac1c947336e993.jpg",
     "static/media/finish.MP4": "/static/media/finish.d6a32658c6b1a9ac67db.MP4",
     "static/media/littleheavenbb.jpg": "/static/media/littleheavenbb.18c4655e95508c599f64.jpg",
     "static/media/littleheavenbedandbreakfast.jpg": "/static/media/littleheavenbedandbreakfast.bd0cec5d7b577f481e5c.jpg",
@@ -49,7 +50,6 @@
     "static/media/inside.jpg": "/static/media/inside.cf39969f3e642586bfb7.jpg",
     "static/media/insidenine.jpg": "/static/media/insidenine.e334fbc5e75396ee7ea7.jpg",
     "static/media/partyfour.jpg": "/static/media/partyfour.e334fbc5e75396ee7ea7.jpg",
-    "static/media/treats.jpg": "/static/media/treats.e334fbc5e75396ee7ea7.jpg",
     "static/media/exteriorone.jpg": "/static/media/exteriorone.9c4bebe4585e0c284c9b.jpg",
     "static/media/before.jpg": "/static/media/before.814eb50e135583d5fe63.jpg",
     "static/media/insidesix.jpg": "/static/media/insidesix.814eb50e135583d5fe63.jpg",
@@ -153,11 +153,11 @@
     "static/media/festivals.jpg": "/static/media/festivals.45f74fc8ef35c7296336.jpg",
     "index.html": "/index.html",
     "main.dbf7c051.css.map": "/static/css/main.dbf7c051.css.map",
-    "main.b642bc73.js.map": "/static/js/main.b642bc73.js.map",
+    "main.d620cd45.js.map": "/static/js/main.d620cd45.js.map",
     "787.c4e7f8f9.chunk.js.map": "/static/js/787.c4e7f8f9.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.dbf7c051.css",
-    "static/js/main.b642bc73.js"
+    "static/js/main.d620cd45.js"
   ]
 }

@@ -145,7 +145,7 @@ const Footer = () => {
             </a>
           </SocialIcons>
           <Contact>
-            <Button to="/signup" style={{ color: 'white', marginLeft: '130px' }}>
+            <Button to="/signup" style={{ color: 'white', marginLeft: '130px', backgroundColor: 'black'}}>
               Newsletter <IoMdArrowRoundForward />
             </Button>
           </Contact>

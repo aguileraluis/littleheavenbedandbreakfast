@@ -108,7 +108,7 @@ const Packages = () => {
                     <div>
                         <h2>Explore the Yadkin Valley Wine Country</h2>
                         <br/>
-                        <h4 style={{textDecoration: 'italics', textAlign: 'center'}}>Whether you want to go hiking, fishing, boating, out to eat, dancing, play pool, or go shopping, the Yadkin Valley will have something for everyone.</h4>
+                        <h4 style={{textDecoration: 'italics', textAlign: 'center'}}>Whether you want to go hiking, biking, fishing, boating, dining, dancing, or go shopping, the Yadkin Valley will have something for everyone.</h4>
                     </div>
                 </section>
             </div>
