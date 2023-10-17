@@ -211,6 +211,12 @@ nav a.active{
   border-radius: 5px !important;
   object-fit: cover;
 }
+.smallimgtwo {
+  height: auto !important;
+  width: 100% !important; 
+  border-radius: 5px !important;
+  object-fit: contain;
+}
 
 .medimg {
   height: auto;
@@ -382,10 +388,12 @@ video{
 
 .img-container {
   position: relative;
-  display: inline-block;
+  display: block;
   width: 100% !important;
   height: auto !important;
+  object-fit: contain;
 }
+
 .img-container img {
   height: 30rem !important;
   display: block;
