@@ -1,4 +1,4 @@
-import Imageone from '../images/bless.jpg';
+import Imageone from '../images/roomshero.jpg';
 import Imagetwo from '../images/Imagetwo.jpg';
 import Imagethree from '../images/Imagethree.jpg';
 import Imagefour from '../images/Imagefour.jpg';
@@ -10,8 +10,8 @@ import Imagefifteen from "../images/littleheavenb&b.jpg";
 import Imagesixteen from "../images/thelodgeinside.jpg";
 import Imageseventeen from "../images/littleheavenbedandbreakfast.jpg";
 import Imageeighteen from "../images/littleheavenbb.jpg"; 
-import Imagenineteen from "../images/herotwo.jpg"; 
-import Imagetwenty from "../images/wallartone.jpg";
+import Imagenineteen from "../images/comfort.jpg"; 
+import Imagetwenty from "../images/aromas.jpg";
 import Imagetwentyone from "../images/Imagetwentyone.jpg";
 import Imagetwentytwo from "../images/Imagetwentytwo.jpg";
 import Imagetwentythree from "../images/Imagetwentythree.jpg";
@@ -105,20 +105,20 @@ export const SliderDataTwo = [
 
 export const SliderDataThree = [
     {
-        title: "Welcome to Little Heaven Bed & Breakfast!", 
-        titletwo: 'a true experience of Peace, Joy, Love, Hope, and Faith!',
+        title: "Welcome to Little Heaven Bed & Breakfast", 
+        titletwo: 'a true experience of Peace, Joy, Love, Hope, and Faith',
         image: Imageseventeen, 
         alt: 'Lodge'
     }, 
     {
-        title: '',
-        titletwo: '',
+        title: "Six Unique and Elegant Rooms",
+        titletwo: 'for the perfect getaway',
         image: Imagefifteen, 
         alt: 'Lodge', 
     }, 
     {
-        title: 'Thank you!', 
-        titletwo: 'for choosing Little Heaven Bed & Breakfast!',
+        title: 'We Thank you', 
+        titletwo: 'for choosing Little Heaven Bed & Breakfast',
         image: Imageeighteen, 
         alt: 'Lodge'
     }, 
@@ -126,17 +126,20 @@ export const SliderDataThree = [
 
 export const SliderDataFour = [
     {
-        title: '', 
+        title: 'You will fall in love with ALL six rooms!', 
+        titletwo: 'each one with new amenities and fully renovated',
         image: Imageone, 
         alt: 'Lodge'
     }, 
     {
-        title: '', 
+        title: 'Your comfort is our TOP priority!', 
+        titletwo: 'We invite you to experience luxury like never before!',
         image: Imagenineteen, 
         alt: 'Lodge'
     }, 
     {
-        title: '', 
+        title: 'Fresh coffee aromas travel through the mountian air', 
+        titletwo: 'every morning at Little Heaven',
         image: Imagetwenty, 
         alt: 'Lodge'
     }, 

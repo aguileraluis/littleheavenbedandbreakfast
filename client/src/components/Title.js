@@ -1,5 +1,5 @@
 import React from 'react';
-import wallone from '../images/thelodgesunset.jpg';
+import wallone from '../images/sunsetimg.jpg';
 import imageseven from '../images/littleheavenb&b.jpg';
 
 
@@ -17,12 +17,12 @@ export default function Title({title, titletwo, paragraph}) {
        
         
       <br/>
-        <h3 style={{color: 'darkorange', paddingRight: '1rem', paddingLeft: '1rem'}}>A Yadkin Valley Bed and Breakfast</h3>
+        <h4 style={{color: 'brown', paddingRight: '1rem', paddingLeft: '1rem', outlineColor: 'orange'}}>- A Yadkin Valley Bed and Breakfast</h4>
         <br/>
         <p data-aos="fade-right"
           data-aos-duration="1300"
           data-aos-anchor-placement="center bottom"
-          style={{fontSize: '1.4rem', color: 'black', backgroundColor: 'orange', textAlign: 'center', paddingLeft: '1rem', paddingRight: '1rem', paddingTop: '0', paddingBottom: '0', marginLeft: '1rem', marginRight: '1rem'}}>{paragraph}</p>
+          style={{fontSize: '1.4rem', color: 'black', backgroundColor: 'orange', textAlign: 'center', paddingLeft: '1rem', paddingRight: '1rem', paddingTop: '0', paddingBottom: '0', marginLeft: '1rem', marginRight: '1rem', borderRadius: '2rem', padding: '40px'}}>{paragraph}</p>
        
         <img 
               className='supimg'

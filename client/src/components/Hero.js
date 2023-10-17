@@ -20,7 +20,7 @@ const HeroSection = styled.section`
     }
     50%
     {
-      transform: scale(1.09);
+      transform: scale(0.98);
     } 
 `;
 
@@ -199,9 +199,9 @@ const Hero = ({ slides }) => {
                       exit='exit'
                       variants={fadeAnimation}
                     />
-                    <HeroContent style={{ textAlign: 'center' }}>
-                      <h3 style={{color: 'black', backgroundColor: 'rgba(237, 167, 29, 0.897)', padding: '15px', borderRadius: '10px'}}data-aos="fade-down" data-aos-duration="600">{slide.title}</h3>
-                      <h2 style={{color: 'black', backgroundColor: 'rgb(300, 116, 2, 0.848)', padding: '10px', borderRadius: '10px'}}data-aos="fade-up" data-aos-duration="600">{slide.titletwo}</h2>
+                    <HeroContent style={{ textAlign: 'center', alignItems: 'center' }}>
+                      <h3 style={{color: 'black', opacity: '0.8', backgroundColor: 'rgba(237, 167, 29, 0.897)', padding: '15px', borderRadius: '10px', textAlign:'center'}}data-aos="fade-down" data-aos-duration="600">{slide.title}</h3>
+                      <h2 style={{color: 'black', opacity: '0.8', backgroundColor: 'rgb(300, 116, 2, 0.848)', padding: '10px', borderRadius: '10px'}}data-aos="fade-up" data-aos-duration="600">{slide.titletwo}</h2>
                       {/* <Button style={{ maxWidth: '160px', textDecoration: 'none' }}
                         data-aos='zoom-out'
                         data-aos-duration='500'
