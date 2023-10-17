@@ -25,7 +25,6 @@ const About = () => {
     
       <Title title="Little Heaven Bed & Breakfast" titletwo="Explore Little Heaven Bed & Breakfast:" paragraph="Stay in the heart of Yadkin County in this elegantly-rustic Yadkin Valley Bed and Breakfast. Little Heaven Bed and Breakfast is less than an hour away from the northwestern Virginia / North Caolina state line, Winston-Salem, Greensboro and High Point and just over an hour away from Charlotte. Views from the Blue Ridge Parkway are within driving distances. There are numerous wineries in the Yadkin Valley that you can enjoy tasing and fine dining. The outdoors will transform your soul when you experience the rawness that the Yadkin Valley has to offer. On the property, there is a pond where you can fish, there is 10 acres full of woods and open space to explore with yourself or your loved ones. Aside from the mountains, we have endless rivers and lakes around the area as well. Little Heaven Bed & Breakfast welcomes you, and thanks you from the bottom of our hearts for the opportunity to provide you with a heavenly experience." /> 
       <br />
-  
       
       <div style={{fontSize: '1.5rem', color: 'black', textAlign: 'center', paddingLeft: '1rem', paddingRight: '1rem', paddingTop: '0', paddingBottom: '0', marginLeft: '1rem', marginRight: '1rem', height: '100%', width: '100%' }}>
         
