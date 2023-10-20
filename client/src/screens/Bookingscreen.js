@@ -8,11 +8,13 @@ import StripeCheckout from 'react-stripe-checkout';
 import Swal from 'sweetalert2';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
+import emailjs from '@emailjs/browser';
 AOS.init({
     duration: 2000
 });
 
 function Bookingscreen() {
+    const [filled, setfilled] = useState(false);
     const { roomid } = useParams();
     const { fromdate } = useParams();
     const { todate } = useParams();
@@ -29,7 +31,11 @@ function Bookingscreen() {
     const [IsActive, setIsActive] = useState(false);
     const [IsActiveTwo, setIsActiveTwo] = useState(false);
     const [IsActiveThree, setIsActiveThree] = useState(false); 
-
+    const [firstname, setfirstname] = useState('');
+    const [lastname, setlastname] = useState('');
+    const [email, setemail] = useState('');
+    const [phonenumber, setphonenumber] = useState('');
+    const [address, setaddress] = useState('');
 
     useEffect(() => {
 
@@ -332,10 +338,10 @@ function Bookingscreen() {
             setloading(true);
             const result = await axios.post('/api/bookings/bookroom', bookingDetails);
             setloading(false);
-            Swal.fire('Payment Accepted', 'Please provide additional details to finish booking!', 'success').then(result => {
-                window.location.href = '/sendemail'
+            Swal.fire('Congratulations! You are booked!', "Thank you so much for booking with us! We can't wait to see you at the Cabin!", 'success').then(result => {
+                window.location.href = '/yadkinvalleywinecountry'
+              })
                 // return result;
-            });
             return result;
         } catch (error) {
             setloading(false);
@@ -343,13 +349,25 @@ function Bookingscreen() {
             return console.log(error);
         }
     }
+    const sendEmail = (e) => {
+        e.preventDefault();
+        emailjs.sendForm('service_pkshh1d', 'template_ezsaj8t', e.target, 'MIDNfGnolFZme7E87');
+        localStorage.clear();
+      }
 
+    function SubmitButton(){
+        if (firstname && lastname && phonenumber && email && address) {
+            return <button type="submit" onClick={() => setfilled(true)} style={{position: 'relative', marginTop: '40px'}} className="btn btn-primary mt-12" >Continue with Payment</button>
+        } else {
+            
+        }
+    }
 
     return (
 
         <>
-        
-        <div style={{ textAlign: 'center' }}>
+           <div>
+           <div style={{ textAlign: 'center' }}>
                     <br/>
                     {/* onClick={() => setnewamount(40.00)} */}
                             <h2>Additional Packages</h2>
@@ -361,9 +379,47 @@ function Bookingscreen() {
                             <br/>
                             <button id="chocolate" onClick={() => setnewamount(39.55)} style={{margin: '10px', backgroundColor: IsActive ? 'darkorange' : '' }}>A box of delicious strawberries dipped in dark chocolate <b>$39.55</b>.</button>
                         </div>
+        {loading ? (<></>) : (
+      
+    <div className="row justify-content-center mt-5"> 
+          <div  className="col-md-5 mt-5 justify-content-center" style={{textAlign : 'center'}}>
+          {error && (<Error message='Please provide your information to continue booking'/>)}
+            <div className="bs">
+            <h2>Please Provide Additional Details</h2>
+       <br/>
+          <form className="contact_form" onSubmit={sendEmail}>
+            <label htmlFor="roomname">Room Name:</label>
+            <input type="text" name="room_name" id="room_name" className="forminput" value={room.name}/>
+            <label htmlFor="fromdate">From Date:</label>
+            <input type="text" name="from_date" id="from_date" className="forminput" value={fromdate}/>
+            <label htmlFor="todate">To Date:</label>
+            <input type="text" name="to_date" id="to_date" className="forminput" value={todate}/>
+            <label htmlFor="total">Total:</label>
+            <input type="text" name="total" id="total" className="forminput" value={totalamount}/>
+            <label htmlFor="firstname">First Name:</label>
+            <input type="text" value={firstname} onChange={e => setfirstname(e.target.value)} name="first_name" id="first_name" placeholder="Please provide first name" className="forminput"/>
+            <label htmlFor="lastname">Last Name:</label>
+            <input type="text" value={lastname} onChange={e => setlastname(e.target.value)} name="last_name" id="last_name" placeholder="Please provide last name"className="forminput"/>
+            <label htmlFor="email">Email:</label>
+            <input type="text" value={email} onChange={e => setemail(e.target.value)} name="email" id="email" placeholder="Please provide email"className="forminput" />
+            <label htmlFor="phonenumber">Phone Number:</label>
+            <input type="text" value={phonenumber} onChange={e => setphonenumber(e.target.value)} name="phone_number" id="phone_number" placeholder="Please provide phone number"className="forminput" />
+            <label htmlFor="address">Address:</label>
+            <input type="text" value={address} onChange={e => setaddress(e.target.value)} name="address" id="address" placeholder="Please provide address"className="forminput" />
+            <label htmlFor="message">Additional Info:</label>
+            <input type="text" name="message" id="message" placeholder="Have a question or dietary preferences/allergies?"className="forminput" />
+            <SubmitButton/>
+          </form>
+            </div>
+          </div>
+        </div>
+  
+        )} 
+          </div>
+      
 
                         <div className="m-5" data-aos="flip-left">
-            {loading ? (<Loader />) : room ? (
+            {loading ? (<Loader />) : filled ? (
 
                 <div className="row justify-content-center mt-5 bs">
 
@@ -423,7 +479,7 @@ function Bookingscreen() {
                     </div>
                 </div>
             ) : (
-                <Error error={error} />
+                <h2 style={{textAlign:"center"}}>Please complete form to continue with payment.</h2>
             )
             }
         </div>
