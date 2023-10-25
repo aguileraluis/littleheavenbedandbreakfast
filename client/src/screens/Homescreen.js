@@ -537,7 +537,7 @@ function Homescreen() {
                     <div className="row justify-content-center  ">
 
                         {loading ? (<Loader />) : (rooms.map(room => {
-                            return (<div className="col-md-10 mt-6" key={room.name} >
+                            return (<div className="col-sm-12 mt-6" key={room.name} >
                                 <Room room={room} fromdate={fromdate} todate={todate} rentPerDay2={room.rentPerDay2} rentPerDay3={room.rentperDay3} rentPerDay1={room.rentperDay1} key={room.name} totalamount={room.totalamount} />
                             </div>)
                         })

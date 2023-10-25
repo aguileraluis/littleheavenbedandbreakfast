@@ -2,9 +2,9 @@ import React from 'react';
 import styled from 'styled-components';
 import { Button } from './Button';
 const Section = styled.section`
-    padding: 2rem 0rem;
+    padding: 1rem;
     display: flex;
-    margin: 10px;
+    margin: auto;
     flex-direction:column; 
     justify-content: center;
     border-radius: 5px;
@@ -12,9 +12,9 @@ const Section = styled.section`
     @media screen and (max-width: 768px) {
        padding: 1rem;
        display: flex;
-       margin: 0;
+       margin: auto;
+       padding: auto;
        justify-content: center;
-       border-radius: 5px;
     }
 `;
 
@@ -27,22 +27,23 @@ const Container = styled.div`
     border-radius: 5px;
 
     @media screen and (max-width: 768px) {
-        padding: 1rem;
+        padding: auto;
         display: flex;
-        margin: 0;
+        margin: auto;
         justify-content: center;
         border-radius: 5px;
      }
 `; 
 
 const Wrap = styled.div`
-    max-width: 1400px;
-    margin: 2px auto;
+    max-width: 1700px;
+    margin: auto;
 
      @media screen and (max-width: 768px) {
         height: auto; 
-        width: 100%; 
+        max-width: 1700px;
         margin: auto; 
+        padding: auto;
     }
 `;
 
@@ -54,9 +55,9 @@ const ColumnLeft = styled.div`
     justify-content: center
 
     @media screen and (max-width: 768px) {
-        height: 600px; 
+        height: 800px; 
         width: 100%; 
-        margin: 0; 
+        padding-right: -10px;
     }
 `;
 
@@ -98,7 +99,7 @@ const Image = styled.img`
   flex-direction: row;
   flex-wrap: wrap;
   width: 100%;
-  height: 110%;
+  height: auto;
   padding: auto;
   padding-top: 10px;
   align-items: center;
@@ -133,7 +134,7 @@ const Features = ({image, imagetwo, totalamount, roomdescriptiontwo, roomname}) 
 
     return (
         
-        <Section style={{backgroundColor : `${color}`, marginTop: '10px', marginRight: '2px', marginLeft: '2px'}}>
+        <Section style={{backgroundColor : `${color}`, marginTop: '5px'}}>
             <Container >
                 <Wrap>
                     <ColumnLeft>
@@ -160,7 +161,7 @@ const Features = ({image, imagetwo, totalamount, roomdescriptiontwo, roomname}) 
                         alt="photographiados"/>
                         <br/>
                         <br/>
-                            <p style={{color: `${color}`}}>{roomdescriptiontwo}</p>
+                            <h5 style={{color: 'black'}}>{roomdescriptiontwo}</h5>
                             <br/>
                         
                     

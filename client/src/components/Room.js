@@ -20,14 +20,14 @@ function Room({ room, fromdate, todate }) {
     var total = (moment.duration((moment(todate, 'MM-DD-YYYY')).diff(moment(fromdate, 'MM-DD-YYYY'))).asDays()); 
 
     return (
-        <div key={room.name} style={{height: '100%', textAlign: 'center', marginBottom: '8px'}} className="row" data-aos='fade-up'>
+        <div key={room.name} style={{height: '100%', width: '100%', textAlign: 'center', marginBottom: '8px'}} className="row" data-aos='fade-up'>
 
             <Features style={{textAlign: 'center'}} image={room.imageurls[0]} imagetwo={room.imageurls[1]} roomname={room.name} type={room.type} roomdescriptiontwo={room.descriptiontwo} rentperday1={room.rentPerDay1} rentperday2={room.rentPerDay2} rentperday3={room.rentPerDay3} totalamount={room.totalamount} key={room.name}/>
-            <div style={{float: "middle", color: 'orange', textAlign: 'center', marginBottom: '10px', paddingRight: '5%', paddingTop: '10px', paddingBottom: '10px'}}>
+            <div style={{float: "middle", color: 'orange', textAlign: 'center', marginBottom: '10px', paddingTop: '10px', paddingBottom: '10px'}}>
             <button className="btn btn-primary" onClick={handleShow}>View Gallery</button>
             </div>
             
-                <div style={{ float: "right", color: 'orange', textAlign: 'center', marginBottom: '10px', paddingRight: '5%', paddingTop: '10px', paddingBottom: '20px'}}>
+                <div style={{ float: "right", color: 'orange', textAlign: 'center', marginBottom: '10px', paddingTop: '10px', paddingBottom: '20px'}}>
 
                 
                 {(
@@ -43,7 +43,7 @@ function Room({ room, fromdate, todate }) {
 
 
 
-            <Modal show={show} onHide={handleClose} size="med">
+            <Modal show={show} onHide={handleClose} size="lg">
                 <Modal.Header style={{textAlign: 'center'}} closeButton>
                     <Modal.Title><h2 >{room.name}</h2></Modal.Title>        
                 </Modal.Header>
@@ -53,7 +53,7 @@ function Room({ room, fromdate, todate }) {
                         { room.imageurls.map(url => {
                             return <Carousel.Item>
                             <img 
-                            className="d-block w-100 h-100 big-img"
+                            className="d-block w-100 h-50 big-img"
                             src={ url }
                             alt="pictures"
                             key={room.name}
