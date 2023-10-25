@@ -50,7 +50,7 @@ const Specialeventsscreen = () => {
       <h1>Special Events & Celebrations</h1>
       <section stle={{ fontSize: '1.5rem', color: 'black', textAlign: 'center', paddingLeft: '1rem', paddingRight: '1rem', paddingTop: '0', paddingBottom: '0', marginLeft: '1rem', marginRight: '1rem', width: '50%', height: 'auto' }}>
 
-        <div style={{ display: 'block', flexDirection: 'row' }}>
+        {/* <div style={{ display: 'block', flexDirection: 'row' }}>
 
           <h1 style={{ textAlign: 'center', verticalAlign: 'middle', marginBottom: '4rem', color: 'rgba(240, 116, 8, 0.848)' }}>Check out our upcoming events!</h1>
 
@@ -103,7 +103,7 @@ const Specialeventsscreen = () => {
 
 
           </Row>
-        </div>
+        </div> */}
         <br />
         <br />
         <br />

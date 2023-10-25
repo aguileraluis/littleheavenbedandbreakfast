@@ -4,12 +4,14 @@
     gap: 10px;
     align-items: center;
     justify-content: center;
-    max-width: 620px;
+    max-width: 1800px;
     margin: 0 auto;
+    padding-left: 20px;
+    padding-right: 20px;
   }
   
   .galleryWrap .single {
-    width: 200px;
+    width: 400px;
     cursor: pointer;
   }
   
@@ -32,7 +34,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 100%;
+    width: auto;
     height: 100%;
   }
   
@@ -62,7 +64,7 @@
   .sliderWrap .btnNext {
     top: 50%;
     transform: translateY(-50%);
-    right: 30px;
+    right: 80px;
   }
   
   .fullScreenImage {
@@ -71,10 +73,11 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    padding-right: 30px;
   }
   
   .fullScreenImage img {
-    max-width: 95%;
+    max-width: 105%;
     margin: auto;
     max-height: 100%;
     pointer-events: none;
