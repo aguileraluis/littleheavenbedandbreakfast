@@ -4,7 +4,7 @@ import { Button } from './Button';
 const Section = styled.section`
     padding: 2rem 0rem;
     display: flex;
-    margin: 30px;
+    margin: 10px;
     flex-direction:column; 
     justify-content: center;
     border-radius: 5px;
@@ -20,7 +20,7 @@ const Section = styled.section`
 
 const Container = styled.div`
     background: white; 
-    margin: 2rem;
+    margin: 1rem;
     padding: 1rem;
     position: relative;
     top: 0; 
@@ -36,13 +36,14 @@ const Container = styled.div`
 `; 
 
 const Wrap = styled.div`
-    max-width: 900px;
+    max-width: 1400px;
     margin: 2px auto;
 
-    @media screen and (max-width: 768px) {
-        max-width: 700px;
-        margin: 0;
-     }
+     @media screen and (max-width: 768px) {
+        height: auto; 
+        width: 100%; 
+        margin: auto; 
+    }
 `;
 
 const ColumnLeft = styled.div`
@@ -53,9 +54,8 @@ const ColumnLeft = styled.div`
     justify-content: center
 
     @media screen and (max-width: 768px) {
-        height: 200px; 
-        -65px; 
-        width: 80%; 
+        height: 600px; 
+        width: 100%; 
         margin: 0; 
     }
 `;
@@ -92,6 +92,17 @@ const Image = styled.img`
     width: 50%;
     border-radius: 10px;
     object-fit: cover; 
+
+    @media screen and (max-width: 768px) {
+        display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: 100%;
+  height: 110%;
+  padding: auto;
+  padding-top: 10px;
+  align-items: center;
+    }
 `; 
 
 const Features = ({image, imagetwo, totalamount, roomdescriptiontwo, roomname}) => {
@@ -122,7 +133,7 @@ const Features = ({image, imagetwo, totalamount, roomdescriptiontwo, roomname}) 
 
     return (
         
-        <Section style={{backgroundColor : `${color}`, marginTop: '20px', marginRight: '2px', marginLeft: '2px'}}>
+        <Section style={{backgroundColor : `${color}`, marginTop: '10px', marginRight: '2px', marginLeft: '2px'}}>
             <Container >
                 <Wrap>
                     <ColumnLeft>
@@ -132,25 +143,28 @@ const Features = ({image, imagetwo, totalamount, roomdescriptiontwo, roomname}) 
                             data-aos-delay='300'
                             data-aos-anchor-placement='center'
                         >
-                            <h1 style={{color: `${color}`}}>{roomname}</h1>
-                        
-                            <h5 style={{color: `${color}`}}>{roomdescriptiontwo}</h5>
-                            <br/>
-                        
-                    <p style={{color: `${color}`, textAlign: 'center'}}><b>Total : {totalamount}</b></p>
-                    <Image style={{padding: '10px', borderRadius: '10%'}}
+                            <h2 style={{color: `${color}`}}>{roomname}</h2>
+                            <p style={{color: `${color}`, textAlign: 'center'}}><b>Total : {totalamount}</b></p>
+                            <Image style={{paddingLeft: '10px', borderRadius: '10%'}}
                           data-aos='fade-left'
                           data-aos-duration='1200'
                           data-aos-anchor-placement='center bottom'
                         src={image} 
                         alt="photographia"/>
                         
-                    <Image style={{padding: '10px', borderRadius: '10%'}}
+                    <Image style={{paddingLeft: '10px', borderRadius: '10%'}}
                           data-aos='fade-left'
                           data-aos-duration='1200'
                           data-aos-anchor-placement='center bottom'
                         src={imagetwo} 
                         alt="photographiados"/>
+                        <br/>
+                        <br/>
+                            <p style={{color: `${color}`}}>{roomdescriptiontwo}</p>
+                            <br/>
+                        
+                    
+                  
                         </Content>
                     </ColumnLeft>
                 </Wrap>

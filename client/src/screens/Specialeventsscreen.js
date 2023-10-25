@@ -36,9 +36,6 @@ const Specialeventsscreen = () => {
     },
     {
       img: 'https://i.postimg.cc/TPPyz0LR/image8.jpg'
-    },
-    {
-      img: 'https://i.postimg.cc/Zq0R7q2n/image9.jpg'
     }
   ]
 
@@ -105,21 +102,14 @@ const Specialeventsscreen = () => {
           </Row>
         </div> */}
         <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
         <h4 style={{ textAlign: 'center', color: 'darkorange' }}>It is a high honor to be able to host your celebration with your loved ones.</h4>
         <TextSection paragraph="Whether you are having a birthday party or a big celebration, let us host your event here! Little Heaven Bed & Breakfast is secluded so you can enjoy your party to the biggest. We have a conference room, a commercial kitchen with seating, outdoor space, a pond, and of course six guest rooms with six guest bathrooms. Check out our conference room below! Call the cabin to reserve your special day now." />
-       
-
       </section>
-
       <Photos galleryImages={galleryImages} />
       <br/>
+      <br/>
       <h2 style={{ textAlign: 'center', marginBottom: '4rem', color: 'rgba(240, 116, 8, 0.848)' }}>Don't miss out on the fun! We look forward to seeing you at the Cabin. Thank you!</h2>
+      <br/>
       <br/>
     </>
   )

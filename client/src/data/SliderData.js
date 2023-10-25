@@ -17,7 +17,7 @@ import Imagetwentytwo from "../images/Imagetwentytwo.jpg";
 import Imagetwentythree from "../images/Imagetwentythree.jpg";
 import yadkinvalley from "../images/yadkinvalley.png"; 
 import pilotmountain from "../images/pilotmountain.jpg"; 
-import lodgeseven from "../images/inside.jpg"; 
+import lodgeseven from "../images/paradise.jpg"; 
 import lodgeeight from "../images/breakfast.jpg"; 
 import Tree from "../images/tree.jpg"; 
 import Thelodge from "../images/thelodgefront.jpg"; 
