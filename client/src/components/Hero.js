@@ -12,7 +12,7 @@ const HeroSection = styled.section`
     overflow: hidden;
     animation: sliderZoomEffect 14s linear infinite;
     border-style: solid;
-    border-width: 15px;
+    border-width: 1px;
     @keyframes sliderZoomEffect {
       0%
     {
@@ -122,10 +122,9 @@ const arrowButtons = css`
   color: #fff;
   cursor: pointer;
   background: #000d1a;
-  border-radius: 50px;
-  padding: 10px;
-  margin-right: 
-  1rem;
+  border-radius: 40px;
+  padding: 5px;
+  margin-left: 11rem;
   user-select: none;
   transition: 0.3s;
   

@@ -110,25 +110,25 @@ const Features = ({image, imagetwo, totalamount, roomdescriptiontwo, roomname}) 
 
     let color = ''
 
-    if (roomname == "Love Suite Room") {
+    if (roomname == "Love Suite ") {
         color = 'red';
     }
 
-    if (roomname == "Joy Guest Room") {
+    if (roomname == "Joy Suite") {
         color = '#D56106'
     }
-    if (roomname == "Hope Guest Room") {
+    if (roomname == "Hope Suite") {
         color = '#2206D5';
     }
 
-    if (roomname == "Peace Guest Room") {
+    if (roomname == "Peace Suite") {
         color = '#95D8CE'
     }
-    if (roomname == "Grace Guest Room") {
+    if (roomname == "Grace Suite") {
         color = '#CEA0E5';
     }
 
-    if (roomname == "Faith Guest Room") {
+    if (roomname == "Faith Suite") {
         color = '#F3C731'
     }
 
