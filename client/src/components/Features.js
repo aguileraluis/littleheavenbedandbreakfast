@@ -110,7 +110,7 @@ const Features = ({image, imagetwo, totalamount, roomdescriptiontwo, roomname}) 
 
     let color = ''
 
-    if (roomname == "Love Guest Room") {
+    if (roomname == "Love Suite Room") {
         color = 'red';
     }
 

@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/static/css/main.a857da7f.css",
-    "main.js": "/static/js/main.b3fbe15d.js",
+    "main.css": "/static/css/main.60915c48.css",
+    "main.js": "/static/js/main.6791c5d3.js",
     "static/js/787.c4e7f8f9.chunk.js": "/static/js/787.c4e7f8f9.chunk.js",
     "static/media/littleheavenb&b.jpg": "/static/media/littleheavenb&b.d18d8c8929ac450bc9e7.jpg",
     "static/media/cafe.jpg": "/static/media/cafe.819f4dac1c947336e993.jpg",
@@ -12,6 +12,7 @@
     "static/media/paradise.jpg": "/static/media/paradise.002042902bd279e2b3a6.jpg",
     "static/media/littleheavenbedandbreakfast.jpg": "/static/media/littleheavenbedandbreakfast.bd0cec5d7b577f481e5c.jpg",
     "static/media/start.MP4": "/static/media/start.4b63748f6feaf8f94982.MP4",
+    "static/media/event.MP4": "/static/media/event.45068e668a45492e865d.MP4",
     "static/media/tourlodge.jpg": "/static/media/tourlodge.7dced2747cd4c0cf6508.jpg",
     "static/media/comfort.jpg": "/static/media/comfort.fd72b141dd197bd8a312.jpg",
     "static/media/breakfast.jpg": "/static/media/breakfast.d159374591d6a6b9bcfa.jpg",
@@ -117,7 +118,6 @@
     "static/media/partythree.jpg": "/static/media/partythree.2e4f23cd73bebe08420d.jpg",
     "static/media/Imagefour.jpg": "/static/media/Imagefour.77ee7cebb7fabea89d28.jpg",
     "static/media/Imagethree.jpg": "/static/media/Imagethree.67c2e5e3f9bf1d98bc13.jpg",
-    "static/media/thanksgiving.JPEG": "/static/media/thanksgiving.fdfde96575c247924f50.JPEG",
     "static/media/Imagetwentythree.jpg": "/static/media/Imagetwentythree.ce9895cb033f8cfba145.jpg",
     "static/media/sidelodge.jpg": "/static/media/sidelodge.fbb7335cb94b4095bf01.jpg",
     "static/media/Imagetwentytwo.jpg": "/static/media/Imagetwentytwo.deb4655f3e707a8bd3d0.jpg",
@@ -132,9 +132,9 @@
     "static/media/localwine.jpg": "/static/media/localwine.83c694085b31dbfa4394.jpg",
     "static/media/wineone.jpg": "/static/media/wineone.f9ed35de7c3e6f9ad748.jpg",
     "static/media/boutique.jpg": "/static/media/boutique.38ecd4b3ce112d95b1ad.jpg",
-    "static/media/pumpkin.jpg": "/static/media/pumpkin.2c1ab9c60b94345fe916.jpg",
     "static/media/foodtwo.jpg": "/static/media/foodtwo.4c58ce961860cd2f491c.jpg",
     "static/media/treattwo.jpg": "/static/media/treattwo.5afb91d8b39b4c50a87c.jpg",
+    "static/media/eventmenu.jpg": "/static/media/eventmenu.b81696ff52267650e6d3.jpg",
     "static/media/dining.jpg": "/static/media/dining.da75920db9c56fad752b.jpg",
     "static/media/lovethree.jpg": "/static/media/lovethree.9bde55244bb4aa788b95.jpg",
     "static/media/frontyard.png": "/static/media/frontyard.6d9ee8f193f761a0a295.png",
@@ -150,16 +150,15 @@
     "static/media/golfing.jpg": "/static/media/golfing.59456f239846f37093e8.jpg",
     "static/media/mariajonathantwo.jpg": "/static/media/mariajonathantwo.44e3d1b300b6b4e3d717.jpg",
     "static/media/spa.jpg": "/static/media/spa.f8316cf17fd0bb4be175.jpg",
-    "static/media/christmas.jpg": "/static/media/christmas.655c4fc22bb77de4a01d.jpg",
     "static/media/shopping.jpg": "/static/media/shopping.40dc02d4eab5a5570fea.jpg",
     "static/media/festivals.jpg": "/static/media/festivals.45f74fc8ef35c7296336.jpg",
     "index.html": "/index.html",
-    "main.a857da7f.css.map": "/static/css/main.a857da7f.css.map",
-    "main.b3fbe15d.js.map": "/static/js/main.b3fbe15d.js.map",
+    "main.60915c48.css.map": "/static/css/main.60915c48.css.map",
+    "main.6791c5d3.js.map": "/static/js/main.6791c5d3.js.map",
     "787.c4e7f8f9.chunk.js.map": "/static/js/787.c4e7f8f9.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.a857da7f.css",
-    "static/js/main.b3fbe15d.js"
+    "static/css/main.60915c48.css",
+    "static/js/main.6791c5d3.js"
   ]
 }

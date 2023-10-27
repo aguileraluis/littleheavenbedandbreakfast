@@ -9,7 +9,7 @@ export default function TextSection({title, paragraph, paragraph1, paragraph2}) 
         data-aos-anchor-placement="center bottom"
         style={{fontSize: '2.5rem', color: 'orange', marginLeft: '1rem', marginRight: '1rem'}}        
         >{title}</h1>
-        <br/>
+       
         <p data-aos="fade-right"
           data-aos-duration="1300"
           data-aos-anchor-placement="center bottom"
