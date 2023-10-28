@@ -486,7 +486,7 @@ function Homescreen() {
 
     }
 
-    const disablePastDates = current => current && current < moment().endOf("day");
+    const disablePastDates = current  => current && current.isBefore(moment().startOf("day"));
     days = [];
 
 

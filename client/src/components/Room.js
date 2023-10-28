@@ -38,6 +38,8 @@ function Room({ room, fromdate, todate }) {
                        :  ""}
                 </Link>
                 )} 
+                <br/>
+                <br/>
                    
             </div>
 
