@@ -322,7 +322,7 @@ function Homescreen() {
                         && !moment(moment(bookingtodate, "MM-DD-YYYY")).isBetween(moment(fromdate, "MM-DD-YYYY"), moment(todate, "MM-DD-YYYY"))
                         && !moment(moment(fromdate, 'MM-DD-YYYY')).isSame(moment(bookingfromdate, "MM-DD-YYYY"))
                         // && !moment(moment(fromdate, 'MM-DD-YYYY')).isSame(moment(bookingtodate, "MM-DD-YYYY"))
-                        && !moment(moment(todate, 'MM-DD-YYYY')).isSame(moment(bookingfromdate, "MM-DD-YYYY"))
+                        // && !moment(moment(todate, 'MM-DD-YYYY')).isSame(moment(bookingfromdate, "MM-DD-YYYY"))
                         && !moment(moment(fromdate, 'MM-DD-YYYY')).isSame(moment(todate, 'MM-DD-YYYY'))
                         // && !moment(moment(todate, 'MM-DD-YYYY')).isSame(moment(bookingtodate, "MM-DD-YYYY"))
                     ) {
