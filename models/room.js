@@ -17,6 +17,9 @@ const roomSchema = mongoose.Schema({
     descriptiontwo: {
         type: String
     }, 
+    rentPerDay : {
+        tupe: String
+    }
 },
     {
         timestamps: true

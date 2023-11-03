@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import styled from 'styled-components';
 import { Button } from './Button';
 const Section = styled.section`
@@ -106,8 +106,9 @@ const Image = styled.img`
     }
 `; 
 
-const Features = ({image, imagetwo, totalamount, roomdescriptiontwo, roomname}) => {
+const Features = ({image, imagetwo, totalamount, rentPerDay, roomdescriptiontwo, roomname}) => {
 
+    const [open, setopen] = useState(false)
     let color = ''
 
     if (roomname == "Love Suite ") {
@@ -132,6 +133,14 @@ const Features = ({image, imagetwo, totalamount, roomdescriptiontwo, roomname}) 
         color = '#F3C731'
     }
 
+    const openDescription = () => {
+       setopen(true)
+    }
+
+    const closeDescription = () => {
+       setopen(false)
+    }
+
     return (
         
         <Section style={{backgroundColor : `${color}`, marginTop: '5px'}}>
@@ -145,15 +154,16 @@ const Features = ({image, imagetwo, totalamount, roomdescriptiontwo, roomname}) 
                             data-aos-anchor-placement='center'
                         >
                             <h2 style={{color: `${color}`}}>{roomname}</h2>
-                            <p style={{color: `${color}`, textAlign: 'center'}}><b>Total : {totalamount}</b></p>
-                            <Image style={{paddingLeft: '10px', borderRadius: '10%'}}
+                            <p style={{color: `black`, textAlign: 'center', fontSize: '20px'}}><b>Price Per Night : {rentPerDay}</b></p>
+                            <p style={{color: `black`, textAlign: 'center', fontSize: '20px'}}><b>Total : {totalamount}</b></p>
+                            <Image style={{padding: '5px', borderRadius: '5%'}}
                           data-aos='fade-left'
                           data-aos-duration='1200'
                           data-aos-anchor-placement='center bottom'
                         src={image} 
                         alt="photographia"/>
                         
-                    <Image style={{paddingLeft: '10px', borderRadius: '10%'}}
+                    <Image style={{padding: '5px', borderRadius: '5%'}}
                           data-aos='fade-left'
                           data-aos-duration='1200'
                           data-aos-anchor-placement='center bottom'
@@ -161,7 +171,12 @@ const Features = ({image, imagetwo, totalamount, roomdescriptiontwo, roomname}) 
                         alt="photographiados"/>
                         <br/>
                         <br/>
-                            <h5 style={{color: 'black'}}>{roomdescriptiontwo}</h5>
+                        <div className="section-title"> 
+                        {open ? <><h5>{roomdescriptiontwo}</h5> <button onClick={closeDescription} style={{marginTop: '10px', marginBottom: '10px', alignItems:'center'}} className="btn btn-primary">Close Details</button></> : <button onClick={openDescription} style={{marginTop: '10px', marginBottom: '10px', alignItems: 'center'}}className="btn btn-primary">View Details</button> }
+                            
+                        </div>
+                       
+        
                             <br/>
                         
                     

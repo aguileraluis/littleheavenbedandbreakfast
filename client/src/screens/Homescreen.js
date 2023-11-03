@@ -35,12 +35,13 @@ function Homescreen() {
     const [kingrooms, setkingrooms] = useState([]);
     const [queenrooms, setqueenrooms] = useState([]);
 
-    const [searchkey, setsearchkey] = useState('');
+    var [searchkey, setsearchkey] = useState('');
     const [present, setpresent] = useState(false);
     const [type, settype] = useState('All')
 
     var temprooms = [];
     var days = [];
+   
 
     useEffect(() => {
 
@@ -53,7 +54,7 @@ function Homescreen() {
                 setduplicaterooms(data);
                 setloading(false);
             } catch (error) {
-                localStorage.clear()
+              
                 seterror(true);
                 setloading(false);
             }
@@ -66,6 +67,7 @@ function Homescreen() {
     }, [])
 
     function filterByDate(dates) {
+
         var fromdate = (moment((dates[0]).$d).format('MM-DD-YYYY'));
         var todate = (moment((dates[1]).$d).format('MM-DD-YYYY'));
 
@@ -105,12 +107,8 @@ function Homescreen() {
 
                 var date = (day._d).toString();
 
-                for (var cuarto of rooms) {
-
-
-
-
-
+                for (var cuarto of duplicaterooms) {
+                   
                     if (cuarto.name.includes("Joy")) {
                             cuarto.totalamount = 0;
                         if (date.includes(Sunday)) {
@@ -137,14 +135,16 @@ function Homescreen() {
                         } else if (date.includes(Saturday)) {
 
                             joytotalprice += 299
+                        } else {
+                            joytotalprice = 0;
                         }
 
                         localStorage.setItem('Joy', JSON.stringify(joytotalprice));
                         cuarto.totalamount = joytotalprice;
 
                     }
-                    if (cuarto.name.includes("Faith")) {
-
+                    else if (cuarto.name.includes("Faith")) {
+                        cuarto.totalamount = 0;
                         if (date.includes(Sunday)) {
 
                             faithtotalprice += 279
@@ -169,6 +169,8 @@ function Homescreen() {
                         } else if (date.includes(Saturday)) {
 
                             faithtotalprice += 299
+                        } else {
+                            faithtotalprice = 0;
                         }
 
                         cuarto.totalamount = faithtotalprice;
@@ -176,8 +178,8 @@ function Homescreen() {
                         localStorage.setItem('Faith', JSON.stringify(faithtotalprice));
 
                     }
-                    if (cuarto.name.includes("Love")) {
-
+                    else if (cuarto.name.includes("Love")) {
+                        cuarto.totalamount = 0;
                         if (date.includes(Sunday)) {
 
                             lovetotalprice += 299
@@ -202,14 +204,16 @@ function Homescreen() {
                         } else if (date.includes(Saturday)) {
 
                             lovetotalprice += 319
+                        } else {
+                            lovetotalprice = 0;
                         }
 
                         cuarto.totalamount = lovetotalprice;
                         localStorage.setItem('Love', JSON.stringify(lovetotalprice));
 
-                    }
-                    if (cuarto.name.includes("Hope")) {
-
+                    } 
+                    else if (cuarto.name.includes("Hope")) {
+                        cuarto.totalamount = 0;
                         if (date.includes(Sunday)) {
 
                             hopetotalprice += 279
@@ -234,13 +238,15 @@ function Homescreen() {
                         } else if (date.includes(Saturday)) {
 
                             hopetotalprice += 299
+                        } else {
+                            hopetotalprice = 0;
                         }
                         cuarto.totalamount = hopetotalprice;
                         localStorage.setItem('Hope', JSON.stringify(hopetotalprice));
 
                     }
-                    if (cuarto.name.includes("Grace")) {
-
+                    else if (cuarto.name.includes("Grace")) {
+                        cuarto.totalamount = 0;
                         if (date.includes(Sunday)) {
 
                             gracetotalprice += 279
@@ -265,13 +271,15 @@ function Homescreen() {
                         } else if (date.includes(Saturday)) {
 
                             gracetotalprice += 299
+                        } else {
+                            gracetotalprice = 0;
                         }
                         cuarto.totalamount = gracetotalprice;
                         localStorage.setItem('Grace', JSON.stringify(gracetotalprice));
 
                     }
-                    if (cuarto.name.includes("Peace")) {
-
+                    else if (cuarto.name.includes("Peace")) {
+                        cuarto.totalamount = 0;
                         if (date.includes(Sunday)) {
                             peacetotalprice += 279
                         } else if (date.includes(Monday)) {
@@ -295,11 +303,15 @@ function Homescreen() {
                         } else if (date.includes(Saturday)) {
 
                             peacetotalprice += 299
+                        } else {
+                            peacetotalprice = 0;
                         }
                         cuarto.totalamount = peacetotalprice;
                         localStorage.setItem('Peace', JSON.stringify(peacetotalprice));
 
                     }
+
+                   
                 }
             }
 
@@ -340,11 +352,16 @@ function Homescreen() {
             }
 
             days = [];
+            joytotalprice = 0;
+            faithtotalprice = 0;
+            lovetotalprice = 0;
+            peacetotalprice = 0;
+            hopetotalprice = 0;
+            gracetotalprice = 0;
 
             // setduplicaterooms(bookedrooms);
 
         }
-
         // setrooms(temprooms);
 
         var merged = duplicaterooms.concat(temprooms);
@@ -371,23 +388,25 @@ function Homescreen() {
 
     function filterBySearch() {
 
-
-        var newtemprooms = rooms.filter(room => room.description.toLowerCase().includes(searchkey.toLowerCase()));
+        var newtemprooms = rooms.filter(room => room.descriptiontwo.toLowerCase().includes(searchkey.toLowerCase()));
 
         newtemprooms.forEach(room => {
             temprooms.push(room);
         })
 
-        // setrooms(temprooms);
+        setrooms(temprooms);
 
         if (searchkey.length === 0) {
-            setrooms(availablesearchrooms);
+            setrooms(duplicaterooms);
+            searchkey = ""
             setpresent(false);
         } else {
             setrooms(temprooms);
             setavailableresults(temprooms);
             setpresent(true);
         }
+
+        
 
     }
 
@@ -496,12 +515,13 @@ function Homescreen() {
                 <Hero slides={SliderDataFour} />
                 <TitleTwo title="Little Heaven Bed & Breakfast" paragraph="Our Yadkin Valley Lodging includes 6 guest rooms on two different levels each with its own bathroom, writing tables and chairs. Every room has a high definition TV and a fireplace. Every room has been magnificently decorated, each with it's own unique theme, still feeling rustic yet modern. All bathrooms have been completely gutted and renovated for your relaxation and enjoyment. Every room has its own AC for your convenience. The sheets and comforters are all top of the line with comfort as a priority. All rooms include an iron, ironing board, towels, body wash, shampoo, hand soap, toiletries and two robes. * Check in is at 3:00 p.m. every day. Thank you for choosing to stay at Little Heaven Bed and Breakfast. We cannot wait to see you at the Cabin!" />
 
-
+                <h5 style={{textAlign: 'center'}}>*The Cabin will be closed on Monday and Tuesday until January 1st 2024.*</h5>
+                        <h5 style={{textAlign: 'center'}}>We apologize in advance for any inconveniences.</h5>
                 <div className="row justify-content-center mt-12" style={{ position: 'relative', margin: '30px' }}>
 
                     <div className="row mt-12 bs justify-content-center" style={{ width: 'auto', height: 'auto', position: 'relative' }} data-aos="flip-up">
 
-
+                    
                         <div className="col-md-5">
                             <div className='form-control'>
                                 <RangePicker
@@ -515,13 +535,13 @@ function Homescreen() {
                         </div>
                         <br />
 
-
                         <div className="col-md-4" >
                             <input type="text" className="form-control" placeholder="search rooms"
                                 value={searchkey} onChange={(e) => { setsearchkey(e.target.value) }} onKeyUp={filterBySearch}
                             />
                         </div>
                         <br />
+                        
                         {present === true ? (
                             <div className="col-md-3">
                                 <select className="form-control" value={type} onChange={(e) => { filterByType(e.target.value) }}>
@@ -531,14 +551,15 @@ function Homescreen() {
                                 </select>
                             </div>
                         ) : <div></div>}
+                        
                     </div>
 
-
+                           
                     <div className="row justify-content-center  ">
 
                         {loading ? (<Loader />) : (rooms.map(room => {
                             return (<div className="col-sm-12 mt-6" key={room.name} >
-                                <Room room={room} fromdate={fromdate} todate={todate} rentPerDay2={room.rentPerDay2} rentPerDay3={room.rentperDay3} rentPerDay1={room.rentperDay1} key={room.name} totalamount={room.totalamount} />
+                                <Room room={room} fromdate={fromdate} todate={todate} rentPerDay2={room.rentPerDay2} rentPerDay3={room.rentperDay3} rentPerDay={room.rentPerDay} key={room.name} totalamount={room.totalamount} />
                             </div>)
                         })
                         )}

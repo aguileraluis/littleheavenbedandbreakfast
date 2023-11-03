@@ -6,6 +6,12 @@ import HomeOne from "../images/HomeOne.jpg";
 import HomeTwo from "../images/HomeTwo.jpg";
 import imageFourteen from "../images/ImageFourteen.jpg";
 
+//// Connecting with MailChimp
+// curl --request GET \
+// --url 'https://us21.api.mailchimp.com/3.0/' \
+// --user 'anystring:9780fa5fb0bb2e1ab596756b9db9803d-us21
+// 9780fa5fb0bb2e1ab596756b9db9803d-us21
+
 export default function Card() {
     <article className="room">
         <div className="img-container">

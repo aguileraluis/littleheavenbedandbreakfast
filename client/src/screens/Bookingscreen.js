@@ -9,6 +9,7 @@ import Swal from 'sweetalert2';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 import emailjs from '@emailjs/browser';
+
 AOS.init({
     duration: 2000
 });
@@ -339,7 +340,7 @@ function Bookingscreen() {
             const result = await axios.post('/api/bookings/bookroom', bookingDetails);
             setloading(false);
             Swal.fire('Congratulations! You are booked!', "Thank you so much for booking with us! We can't wait to see you at the Cabin!", 'success').then(result => {
-                window.location.href = '/yadkinvalleywinecountry'
+                window.location.href = '/signup'
               })
                 // return result;
             return result;
@@ -395,7 +396,7 @@ function Bookingscreen() {
             <label htmlFor="todate">To Date:</label>
             <input type="text" name="to_date" id="to_date" className="forminput" value={todate}/>
             <label htmlFor="total">Total:</label>
-            <input type="text" name="total" id="total" className="forminput" value={totalamount}/>
+            <input type="text" name="total" id="total" className="forminput" value={`Room: ${(totalamount - taxes - salestax).toFixed(2)} + Room Tax: ${taxes} + Sales Tax: ${salestax} = ${totalamount}`}/>
             <label htmlFor="firstname">First Name:</label>
             <input type="text" value={firstname} onChange={e => setfirstname(e.target.value)} name="first_name" id="first_name" placeholder="Please provide first name" className="forminput"/>
             <label htmlFor="lastname">Last Name:</label>
@@ -448,7 +449,7 @@ function Bookingscreen() {
                                 { wine ? (<h5>Wine: $40.00 </h5>) : (<h5>Wine: $0.00</h5>)}
                                 { chocolate ? (<h5>Dozen Chocolate Strawberries: $39.55</h5>) : (<h5>Dozen Chocolate Strawberries: $0.00</h5>)}
                                 { flowers ? (<h5>Dozen Roses: $45.99</h5>) : (<h5>Dozen Roses: $0.00</h5>) }
-                                <h5>Total nights : { totaldays } night stay</h5>
+                                <h5>Total nights : { totaldays.toFixed(0) } night stay</h5>
                                 <h5>Room Occupancy Tax: ${taxes} </h5>
                                 <h5>Room Sales Tax: ${salestax} </h5>
                                 <h5>Total Amount : {totalamount}</h5>

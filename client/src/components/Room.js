@@ -22,7 +22,7 @@ function Room({ room, fromdate, todate }) {
     return (
         <div key={room.name} style={{height: '100%', width: '100%', textAlign: 'center', marginBottom: '8px'}} className="row" data-aos='fade-up'>
 
-            <Features style={{textAlign: 'center'}} image={room.imageurls[0]} imagetwo={room.imageurls[1]} roomname={room.name} type={room.type} roomdescriptiontwo={room.descriptiontwo} rentperday1={room.rentPerDay1} rentperday2={room.rentPerDay2} rentperday3={room.rentPerDay3} totalamount={room.totalamount} key={room.name}/>
+            <Features style={{textAlign: 'center'}} image={room.imageurls[0]} imagetwo={room.imageurls[1]} roomname={room.name} type={room.type} roomdescriptiontwo={room.descriptiontwo} rentPerDay={room.rentPerDay} rentperday2={room.rentPerDay2} rentperday3={room.rentPerDay3} totalamount={room.totalamount} key={room.name}/>
             <div style={{float: "middle", color: 'orange', textAlign: 'center', marginBottom: '10px', paddingTop: '10px', paddingBottom: '10px'}}>
             <button className="btn btn-primary" onClick={handleShow}>View Gallery</button>
             </div>
