@@ -107,7 +107,7 @@ function Signupscreen() {
               <input type="text" className="form-control" placeholder="phonenumber" style={{textAlign : 'center'}}
               value={phonenumber} onChange={(e)=> {setphonenumber(e.target.value)}}/>
               <br/>
-              <h4>Birthday:</h4> 
+              <h4>Birthday: Please use the following format : MM/DD !</h4> 
               <input type="text" className="form-control" placeholder="birthday (mm/dd) only" style={{textAlign : 'center'}}
               value={birthday} onChange={(e)=> {setbirthday(e.target.value)}}/>
 

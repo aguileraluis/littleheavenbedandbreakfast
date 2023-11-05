@@ -169,8 +169,6 @@ const Features = ({image, imagetwo, totalamount, rentPerDay, roomdescriptiontwo,
                           data-aos-anchor-placement='center bottom'
                         src={imagetwo} 
                         alt="photographiados"/>
-                        <br/>
-                        <br/>
                         <div className="section-title"> 
                         {open ? <><h5>{roomdescriptiontwo}</h5> <button onClick={closeDescription} style={{marginTop: '10px', marginBottom: '10px', alignItems:'center'}} className="btn btn-primary">Close Details</button></> : <button onClick={openDescription} style={{marginTop: '10px', marginBottom: '10px', alignItems: 'center'}}className="btn btn-primary">View Details</button> }
                             

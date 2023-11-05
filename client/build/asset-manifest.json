@@ -1,8 +1,8 @@
 {
   "files": {
-    "main.css": "/static/css/main.43ba5dfd.css",
-    "main.js": "/static/js/main.9c57bfec.js",
-    "static/js/988.01eb6c4b.chunk.js": "/static/js/988.01eb6c4b.chunk.js",
+    "main.css": "/static/css/main.2484b9e0.css",
+    "main.js": "/static/js/main.f836e084.js",
+    "static/js/787.d5fa4d18.chunk.js": "/static/js/787.d5fa4d18.chunk.js",
     "static/media/littleheavenb&b.jpg": "/static/media/littleheavenb&b.d18d8c8929ac450bc9e7.jpg",
     "static/media/cafe.jpg": "/static/media/cafe.819f4dac1c947336e993.jpg",
     "static/media/aromas.jpg": "/static/media/aromas.7636a23c7c55daf3d781.jpg",
@@ -153,12 +153,12 @@
     "static/media/shopping.jpg": "/static/media/shopping.40dc02d4eab5a5570fea.jpg",
     "static/media/festivals.jpg": "/static/media/festivals.45f74fc8ef35c7296336.jpg",
     "index.html": "/index.html",
-    "main.43ba5dfd.css.map": "/static/css/main.43ba5dfd.css.map",
-    "main.9c57bfec.js.map": "/static/js/main.9c57bfec.js.map",
-    "988.01eb6c4b.chunk.js.map": "/static/js/988.01eb6c4b.chunk.js.map"
+    "main.2484b9e0.css.map": "/static/css/main.2484b9e0.css.map",
+    "main.f836e084.js.map": "/static/js/main.f836e084.js.map",
+    "787.d5fa4d18.chunk.js.map": "/static/js/787.d5fa4d18.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.43ba5dfd.css",
-    "static/js/main.9c57bfec.js"
+    "static/css/main.2484b9e0.css",
+    "static/js/main.f836e084.js"
   ]
 }

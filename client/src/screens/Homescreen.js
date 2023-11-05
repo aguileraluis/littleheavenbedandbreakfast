@@ -517,15 +517,15 @@ function Homescreen() {
 
                 <h5 style={{textAlign: 'center'}}>*The Cabin will be closed on Monday and Tuesday until January 1st 2024.*</h5>
                         <h5 style={{textAlign: 'center'}}>We apologize in advance for any inconveniences.</h5>
-                <div className="row justify-content-center mt-12" style={{ position: 'relative', margin: '30px' }}>
+                <div className="row justify-content-center mt-12" style={{ position: 'relative', margin: '5px' }}>
 
                     <div className="row mt-12 bs justify-content-center" style={{ width: 'auto', height: 'auto', position: 'relative' }} data-aos="flip-up">
 
                     
-                        <div className="col-md-5">
+                        <div className="col-sm-12">
                             <div className='form-control'>
                                 <RangePicker
-                                    dropdownClassName="dropdown-class-name-1"
+                                    dropdownClassName="dropdown-class-name-2"
                                     format='MM-DD-YYYY'
                                     onChange={filterByDate}
                                     disabledDate={current => disablePastDates(current)}
