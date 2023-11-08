@@ -28,6 +28,8 @@ function Bookingscreen() {
     const [wine, setwine] = useState(false);
     const [chocolate, setchocolate] = useState(false);
     const [flowers, setflowers] = useState(false);
+    const [noneselected, setnoneselected] = useState(false);
+    const [message, setmessage] = useState("");
     const [addedroses, setaddedroses] = useState("");
     const [addedchocolate, setaddedchocolate] = useState("");
     const [taxes, settaxes] = useState(0);
@@ -40,6 +42,8 @@ function Bookingscreen() {
     const [email, setemail] = useState('');
     const [phonenumber, setphonenumber] = useState('');
     const [address, setaddress] = useState('');
+    const [selected, setselected] = useState(false)
+    const [clearpackages, setclearpackages] = useState(false);
 
     useEffect(() => {
 
@@ -59,13 +63,16 @@ function Bookingscreen() {
 
                     if (flowers) {
                         (grandtotal += 45.99)
-                       
+                        localStorage.setitem('roses', "Dozen Roses : $45.99");
+                        setflowers(flowers);
                     } if (wine) {
                         (grandtotal += 40.00);
-                      
+                        localStorage.setitem('wine', "A bottle of wine : $40.00");
+                        setwine(wine)
                     } if (chocolate) {
                         (grandtotal += 39.55);
-                       
+                        localStorage.setitem('chocolate', "Chocolate Covered Strawberries : $39.55");
+                        setchocolate(chocolate);
                     }
                     else {
                         settotalamount(0);
@@ -95,16 +102,16 @@ function Bookingscreen() {
 
                     if (flowers) {
                         (grandtotal += 45.99)
-                    
-
+                        localStorage.setitem('roses', "Dozen Roses : $45.99");
+                        setflowers(flowers);
                     } if (wine) {
                         (grandtotal += 40.00);
-                    
-
+                        localStorage.setitem('wine', "A bottle of wine : $40.00");
+                        setwine(wine)
                     } if (chocolate) {
                         (grandtotal += 39.55);
-                    
-
+                        localStorage.setitem('chocolate', "Chocolate Covered Strawberries : $39.55");
+                        setchocolate(chocolate);
                     }
                     else {
                         settotalamount(0);
@@ -130,19 +137,18 @@ function Bookingscreen() {
                     const lovetotal = JSON.parse(localStorage.getItem("Love"))
 
                     lovetotal ? grandtotal += lovetotal : grandtotal = 0;
-
                     if (flowers) {
                         (grandtotal += 45.99)
-                     
-
+                        localStorage.setitem('roses', "Dozen Roses : $45.99");
+                        setflowers(flowers);
                     } if (wine) {
                         (grandtotal += 40.00);
-                       
-
+                        localStorage.setitem('wine', "A bottle of wine : $40.00");
+                        setwine(wine)
                     } if (chocolate) {
                         (grandtotal += 39.55);
-                      
-
+                        localStorage.setitem('chocolate', "Chocolate Covered Strawberries : $39.55");
+                        setchocolate(chocolate);
                     }
                     else {
                         settotalamount(0);
@@ -171,16 +177,16 @@ function Bookingscreen() {
 
                     if (flowers) {
                         (grandtotal += 45.99)
-                       
-
+                        localStorage.setitem('roses', "Dozen Roses : $45.99");
+                        setflowers(flowers);
                     } if (wine) {
                         (grandtotal += 40.00);
-                     
-
+                        localStorage.setitem('wine', "A bottle of wine : $40.00");
+                        setwine(wine)
                     } if (chocolate) {
                         (grandtotal += 39.55);
-                    
-
+                        localStorage.setitem('chocolate', "Chocolate Covered Strawberries : $39.55");
+                        setchocolate(chocolate);
                     }
                     else {
                         settotalamount(0);
@@ -210,16 +216,16 @@ function Bookingscreen() {
 
                     if (flowers) {
                         (grandtotal += 45.99)
-                   
-
+                        localStorage.setitem('roses', "Dozen Roses : $45.99");
+                        setflowers(flowers);
                     } if (wine) {
                         (grandtotal += 40.00);
-               
-
+                        localStorage.setitem('wine', "A bottle of wine : $40.00");
+                        setwine(wine)
                     } if (chocolate) {
                         (grandtotal += 39.55);
-                     
-
+                        localStorage.setitem('chocolate', "Chocolate Covered Strawberries : $39.55");
+                        setchocolate(chocolate);
                     }
                     else {
                         settotalamount(0);
@@ -248,14 +254,16 @@ function Bookingscreen() {
 
                     if (flowers) {
                         (grandtotal += 45.99)
-     
-
+                        localStorage.setitem('roses', "Dozen Roses : $45.99");
+                        setflowers(flowers);
                     } if (wine) {
                         (grandtotal += 40.00);
-   
-
+                        localStorage.setitem('wine', "A bottle of wine : $40.00");
+                        setwine(wine)
                     } if (chocolate) {
-                        (grandtotal += 39.55)
+                        (grandtotal += 39.55);
+                        localStorage.setitem('chocolate', "Chocolate Covered Strawberries : $39.55");
+                        setchocolate(chocolate);
                     }
                     else {
                         settotalamount(0);
@@ -296,7 +304,9 @@ function Bookingscreen() {
 
             IsActive ? setIsActive(false) : setIsActive(true);
             !IsActive ? setchocolate(true) : setchocolate(false);
+          
             var total = totalamount += 39.55;
+            total = parseFloat(total).toFixed(2);
             settotalamount(total);
             localStorage.setItem('total', total);
         }
@@ -304,17 +314,20 @@ function Bookingscreen() {
 
             IsActiveTwo ? setIsActiveTwo(false) : setIsActiveTwo(true);
             !IsActiveTwo ? setflowers(true) : setflowers(false);
+          
             var totaltwo = totalamount += 45.99;
+            totaltwo = parseFloat(totaltwo).toFixed(2)
             settotalamount(totaltwo);
             localStorage.setItem('total', total);
         }
-        if (e === 40.00) {
+        if (e === 0.00) {
 
             IsActiveThree ? setIsActiveThree(false) : setIsActiveThree(true);
-            !IsActiveThree ? setwine(true) : setwine(false);
-            var totalthree = totalamount += 40.00;
-            settotalamount(totalthree);
-            localStorage.setItem('total', total);
+            !IsActiveThree ? setnoneselected(true) : setnoneselected(false);
+            
+            // var totalthree = totalamount += 40.00;
+            // settotalamount(totalthree);
+            // localStorage.setItem('total', total);
         } 
         else {
        
@@ -323,7 +336,13 @@ function Bookingscreen() {
    
 }
 
+    let flowerstwo = localStorage.getItem("flowers");
+    let chocolatetwo = localStorage.getItem("chocolate");
+    let winetwo = localStorage.getItem("wine");
+
     async function onToken(token) {
+
+       
 
         let bookingDetails = {
             room,
@@ -359,74 +378,112 @@ function Bookingscreen() {
         }
     }
     const sendEmail = (e) => {
-        setfilled(true)
+        setfilled(true);
+        setclearpackages(true)
         e.preventDefault();
         emailjs.sendForm('service_pkshh1d', 'template_ezsaj8t', e.target, 'MIDNfGnolFZme7E87');
         console.log("email sent");
         localStorage.clear();
       }
+    function SubmitButton() {
+       
+        return <button type="submit" onClick={() => setselected(true)} style={{position: 'relative', alignContent: 'center', marginTop: '40px'}} className="btn btn-primary mt-12 section-title" >Okay! I've selected my additional packages.</button> 
+    }
 
     return (
 
         <>
+
            <div>
+           { !selected ?
            <div style={{ textAlign: 'center' }}>
                     <br/>
-                    {/* onClick={() => setnewamount(40.00)} */}
+                             
+                                
                             <h2>Additional Packages</h2>
                             <br/>
                             <h6>* Call the Cabin in advance to set up details on added packages</h6>
                             <button id="flowers" onClick={() => setnewamount(45.99)} style={{margin: '10px', backgroundColor: IsActiveTwo ? 'darkorange' : '' }}>A dozen roses: <b>$45.99</b>.</button>
                             <br/>
-                            <button id="wine" style={{margin: '10px', backgroundColor: IsActiveThree ? 'darkorange' : '' }}>* Coming Soon * A bottle of wine <b>$40.00</b>.</button>
+                            <button id="wine" style={{margin: '10px', backgroundColor: '' }}>* Coming Soon * A bottle of wine <b>$40.00</b>.</button>
                             <br/>
                             <button id="chocolate" onClick={() => setnewamount(39.55)} style={{margin: '10px', backgroundColor: IsActive ? 'darkorange' : '' }}>A box of delicious strawberries dipped in dark chocolate <b>$39.55</b>.</button>
+                            <br/>
+                            <button id="noneselected" onClick={() => setnewamount(0.00)} style={{margin: '10px', backgroundColor: IsActiveThree ? 'darkorange' : '' }}>Maybe Next Time</button>
+                            <br/>
+                            <br/>
+                            <SubmitButton/>
+                           
                         </div>
-        {loading ? (<></>) : (
+                   
+                 : <></> }
+        { selected ? 
       
-    <div className="row justify-content-center mt-5"> 
-          <div  className="col-md-5 mt-5 justify-content-center" style={{textAlign : 'center'}}>
-          {error && (<Error message='Please provide your information to continue booking'/>)}
-            <div className="bs">
+    <div style={{width: '60%', textAlign: 'center', margin: 'auto'}} className="col justify-content-center mt-5"> 
+          <div  className="justify-content-center" style={{textAlign : 'center'}}>
+            <div style={{arginLeft: '50px', textAlign: 'center', alignContent: 'center'}}/>
             <h2>Please Provide Additional Details</h2>
        <br/>
-          <form className="contact_form" onSubmit={sendEmail}>
-            <label htmlFor="roomname">Room Name:</label>
+          <form style={{textAlign: 'center'}} className="bs" onSubmit={sendEmail}>
+            <label style={{color: 'orange', fontSize: '20px'}}htmlFor="roomname"> Room Name: </label>
             <input type="text" name="room_name" id="room_name" className="forminput" value={room.name}/>
-            <label htmlFor="fromdate">From Date:</label>
+            <br/>
+            <label style={{color: 'orange', fontSize: '20px'}}htmlFor="fromdate">From Date:</label>
             <input type="text" name="from_date" id="from_date" className="forminput" value={fromdate}/>
-            <label htmlFor="todate">To Date:</label>
+            <br/>
+            <label style={{color: 'orange', fontSize: '20px'}}htmlFor="todate">To Date:</label>
             <input type="text" name="to_date" id="to_date" className="forminput" value={todate}/>
-            <label htmlFor="total">Total:</label>
-            <input type="text" name="total" id="total" className="forminput" value={totalamount}/>
-            <label htmlFor="firstname">First Name:</label>
-            <input type="text" value={firstname} onChange={e => setfirstname(e.target.value)} name="first_name" id="first_name" placeholder="Please provide first name" className="forminput"/>
-            <label htmlFor="lastname">Last Name:</label>
-            <input type="text" value={lastname} onChange={e => setlastname(e.target.value)} name="last_name" id="last_name" placeholder="Please provide last name"className="forminput"/>
-            <label htmlFor="email">Email:</label>
-            <input type="text" value={email} onChange={e => setemail(e.target.value)} name="email" id="email" placeholder="Please provide email"className="forminput" />
-            <label htmlFor="phonenumber">Phone Number:</label>
-            <input type="text" value={phonenumber} onChange={e => setphonenumber(e.target.value)} name="phone_number" id="phone_number" placeholder="Please provide phone number"className="forminput" />
-            <label htmlFor="address">Address:</label>
-            <input type="text" value={address} onChange={e => setaddress(e.target.value)} name="address" id="address" placeholder="Please provide address"className="forminput" />
-            <label htmlFor="message">Additional Info:</label>
-            <input type="text" name="message" id="message" placeholder="Have a question or dietary preferences/allergies?"className="forminput" />
-            <label htmlFor="roses">Dozen Roses:</label>
-            <input type="text" name="roses" id="roses" onChange={e => setaddedroses(e.target.value)} value={addedroses} placeholder="Did you order a dozen roses?"className="forminput" />
-            <label htmlFor="chocolate">Chocolate Covered Strawberries:</label>
-            <input type="text" name="chocolate" id="chocolate" onChange={e => setaddedchocolate(e.target.value)} value={addedchocolate} placeholder="Did you order chocolate covered strawberries?"className="forminput" />     
-            <button type="submit" onClick={() => sendEmail} style={{position: 'relative', marginTop: '40px'}} className="btn btn-primary mt-12" >Information Verified</button>
+            <br/>
+            <label style={{color: 'orange', fontSize: '20px'}}htmlFor="todate">Room Occupansy Tax:</label>
+            <input type="text" name="taxes" id="to_date" className="forminput" value={`$ ${taxes}`}/>
+            <br/>
+            <label style={{color: 'orange', fontSize: '20px'}}htmlFor="todate">Room Sales Tax:</label>
+            <input type="text" name="salestax" id="to_date" className="forminput" value={`$ ${salestax}`}/>
+            <label style={{color: 'orange', fontSize: '20px'}}htmlFor="total">Total:</label>
+            <input type="text" name="total" id="total" className="forminput" value={`$ ${totalamount}`}/>
+            <br/>
+            <label style={{color: 'orange', fontSize: '20px'}}htmlFor="firstname">First Name:</label>
+            <input type="text" onChange={e => setfirstname(e.target.value)} value={firstname} name="first_name" id="first_name" placeholder="Please provide first name" className="forminput"/>
+            <br/>
+            <label style={{color: 'orange', fontSize: '20px'}}htmlFor="lastname">Last Name:</label>
+            <input type="text" onChange={e => setlastname(e.target.value)} value={lastname} name="last_name" id="last_name" placeholder="Please provide last name"className="forminput"/>
+            <br/>
+            <label style={{color: 'orange', fontSize: '20px'}}htmlFor="email">Email:</label>
+            <input type="text" onChange={e => setemail(e.target.value)} value={email} name="email" id="email" placeholder="Please provide email"className="forminput" />
+            <br/>
+            <label style={{color: 'orange', fontSize: '20px'}}htmlFor="phonenumber">Phone Number:</label>
+            <input type="text" onChange={e => setphonenumber(e.target.value)} value={phonenumber} name="phone_number" id="phone_number" placeholder="Please provide phone number"className="forminput" />
+            <br/>
+            <label style={{color: 'orange', fontSize: '20px'}}htmlFor="address">Address:</label>
+            <input type="text" onChange={e => setaddress(e.target.value)} value={address} name="address" id="address" placeholder="Please provide address"className="forminput" />
+            <br/>
+            <br/>
+            <label style={{color: 'orange', fontSize: '20px'}}htmlFor="message">Additional Info:</label>
+            <input type="text" onChange={e => setmessage(e.target.value)} value={message} name="message" id="message" placeholder="Have a question or dietary preferences/allergies?"className="forminput" />
+
+    
+            <input type="text" onChange={() => setflowers(flowers)} name="roses" id="roses" className="forminput" value={flowers ? "A Dozen Exquisite Roses: $45.99" : "No Roses Added"}/>
+
+            <input type="text" onChange={() => setchocolate(chocolate)} name="chocolate" id="chocolate" className="forminput" value={chocolate ? "A Dozen Delicious Chocolate Covered Strawberries: $39.55" : "No Strawberries Added"}/> 
+
+            { firstname && lastname && email && address && totalamount > 0 ? <button type="submit" onClick={() => sendEmail} style={{position: 'relative', marginTop: '40px'}} className="btn btn-primary mt-12" >Information Verified</button> : "" }
+            
           </form>
             </div>
           </div>
-        </div>
-        )} 
+        : <></>
+        } 
           </div>
 
                         <div className="m-5" data-aos="flip-left">
-            { filled ? (
+                        
+            { filled && totalamount > 0 ? (
+                
                 <div className="row justify-content-center mt-5 bs">
-
+<h2>Thank you! Please continue to payment.</h2>
+<br/>
+<br/>
+<br/>
 <div className="col-md-6">
     <h1>{room.name}</h1>
     <img src={room.imageurls[0]} className="bigimg" alt="bigimage" />
@@ -455,7 +512,7 @@ function Bookingscreen() {
             <h5>Total nights : { totaldays.toFixed(0) } night stay</h5>
             <h5>Room Occupancy Tax: ${taxes} </h5>
             <h5>Room Sales Tax: ${salestax} </h5>
-            <h5>Total Amount : {totalamount}</h5>
+            <h5>Total Amount : ${totalamount}</h5>
             
             
         </b>
