@@ -28,6 +28,9 @@ import wineries from "../images/wineries.png";
 import entrance from "../images/inside.jpg";
 import entrancetwo from "../images/insidelodge.jpg";
 import entrancethree from "../images/entrancethree.jpg";
+import outside from "../images/outsidetwo.jpg";
+import inside from "../images/outsidethree.jpg";
+import bathroom from "../images/lodgehero.jpg";
 
 
 
@@ -111,10 +114,28 @@ export const SliderDataThree = [
         alt: 'Lodge'
     }, 
     {
+        title: "From Modern Decor to Luxurious Comfort",
+        titletwo: 'You will forget where you are',
+        image: bathroom, 
+        alt: 'Lodge', 
+    }, 
+    {
         title: "Six Unique and Elegant Rooms",
         titletwo: 'for the perfect getaway',
         image: Imagefifteen, 
         alt: 'Lodge', 
+    }, 
+    {
+        title: 'Mountain Views Surround You', 
+        titletwo: 'relax and let them take your worries away',
+        image: outside, 
+        alt: 'Lodge'
+    }, 
+    {
+        title: 'An Exquisite, Rustic Experience', 
+        titletwo: 'The openness carries itself inside',
+        image: inside, 
+        alt: 'Lodge'
     }, 
     {
         title: 'We Thank you', 

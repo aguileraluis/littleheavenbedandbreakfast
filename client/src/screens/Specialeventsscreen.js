@@ -51,21 +51,28 @@ const Specialeventsscreen = () => {
           <h1 style={{ textAlign: 'center', verticalAlign: 'middle', marginBottom: '4rem', color: 'darkorange' }}>Check out our upcoming events!</h1>
           <div className='demo' id='demo'>
             <div className='container'>
-                <div className='col-1'>
-                  <br/>
-                    <p>Christmas Dinner Party</p>
-                    <p>Come join the fun and celebration!</p>
+              <div className='col-1'>
+                <br />
+                <p>Christmas Dinner Party</p>
+                <p>Come join the fun and celebration!</p>
 
-                    <iframe width='300' height='540' src={event} title='Youtube video player' frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen />
-                    
-                    <br/>
-                    <button style={{backgroundColor: 'black'}}className='btn-primary'><a style={{color: 'white', textDecoration: "none"}}href="https://www.facebook.com/events/1494191691393241/?acontext=%7B%22event_action_history%22%3A[]%7D">Go to Facebook Event</a></button>
+
+                <div style={{paddingBottom: "56.25%", paddingRight: '0', paddingLeft: '0', position: "relative", display:"block", width: "100%"}}>
+                  <iframe width="100%" height="100%"
+                    src={event} frameborder="0" allowfullscreen="" style={{ position: "absolute", top: "0", right: '0',bottom: '0', left: "0" }}>
+                  </iframe>
                 </div>
-                <div className='col-1'>
-                <img className="smallimgthree" src={eventmenu} alt="menu"/>
-                </div>
+
+
+
+                <br />
+                <button style={{ backgroundColor: 'black' }} className='btn-primary'><a style={{ color: 'white', textDecoration: "none" }} href="https://www.facebook.com/events/1494191691393241/?acontext=%7B%22event_action_history%22%3A[]%7D">Go to Facebook Event</a></button>
+              </div>
+              <div className='col-1'>
+                <img className="smallimgthree" src={eventmenu} alt="menu" />
+              </div>
             </div>
-        </div>
+          </div>
 
 
 
@@ -77,11 +84,11 @@ const Specialeventsscreen = () => {
         <TextSection paragraph="Whether you are having a birthday party or a big celebration, let us host your event here! Little Heaven Bed & Breakfast is secluded so you can enjoy your party to the biggest. We have a conference room, a commercial kitchen with seating, outdoor space, a pond, and of course six guest rooms with six guest bathrooms. Check out our conference room below! Call the cabin to reserve your special day now." />
       </section>
       <Photos galleryImages={galleryImages} />
-      <br/>
-      <br/>
+      <br />
+      <br />
       <h2 style={{ textAlign: 'center', marginBottom: '4rem', color: 'rgba(240, 116, 8, 0.848)' }}>Don't miss out on the fun! We look forward to seeing you at the Cabin. Thank you!</h2>
-      <br/>
-      <br/>
+      <br />
+      <br />
     </>
   )
 }

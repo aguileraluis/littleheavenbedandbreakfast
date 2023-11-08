@@ -1,9 +1,10 @@
 {
   "files": {
     "main.css": "/static/css/main.2484b9e0.css",
-    "main.js": "/static/js/main.3b5504e6.js",
+    "main.js": "/static/js/main.f668ba06.js",
     "static/js/787.d5fa4d18.chunk.js": "/static/js/787.d5fa4d18.chunk.js",
     "static/media/littleheavenb&b.jpg": "/static/media/littleheavenb&b.d18d8c8929ac450bc9e7.jpg",
+    "static/media/outsidethree.jpg": "/static/media/outsidethree.c53b2a3cf7807eda601c.jpg",
     "static/media/cafe.jpg": "/static/media/cafe.819f4dac1c947336e993.jpg",
     "static/media/aromas.jpg": "/static/media/aromas.7636a23c7c55daf3d781.jpg",
     "static/media/finish.MP4": "/static/media/finish.d6a32658c6b1a9ac67db.MP4",
@@ -11,10 +12,12 @@
     "static/media/littleheavenbb.jpg": "/static/media/littleheavenbb.18c4655e95508c599f64.jpg",
     "static/media/paradise.jpg": "/static/media/paradise.002042902bd279e2b3a6.jpg",
     "static/media/littleheavenbedandbreakfast.jpg": "/static/media/littleheavenbedandbreakfast.bd0cec5d7b577f481e5c.jpg",
+    "static/media/lodgehero.jpg": "/static/media/lodgehero.d00dec0fef8c5787c61f.jpg",
     "static/media/start.MP4": "/static/media/start.4b63748f6feaf8f94982.MP4",
     "static/media/event.MP4": "/static/media/event.45068e668a45492e865d.MP4",
     "static/media/tourlodge.jpg": "/static/media/tourlodge.7dced2747cd4c0cf6508.jpg",
     "static/media/comfort.jpg": "/static/media/comfort.fd72b141dd197bd8a312.jpg",
+    "static/media/outsidetwo.jpg": "/static/media/outsidetwo.769a810d846ba60b8a70.jpg",
     "static/media/breakfast.jpg": "/static/media/breakfast.d159374591d6a6b9bcfa.jpg",
     "static/media/pilotmountain.jpg": "/static/media/pilotmountain.a6a8482565f88612694b.jpg",
     "static/media/exteriorten.jpg": "/static/media/exteriorten.65cd5117468ed08ea215.jpg",
@@ -154,11 +157,11 @@
     "static/media/festivals.jpg": "/static/media/festivals.45f74fc8ef35c7296336.jpg",
     "index.html": "/index.html",
     "main.2484b9e0.css.map": "/static/css/main.2484b9e0.css.map",
-    "main.3b5504e6.js.map": "/static/js/main.3b5504e6.js.map",
+    "main.f668ba06.js.map": "/static/js/main.f668ba06.js.map",
     "787.d5fa4d18.chunk.js.map": "/static/js/787.d5fa4d18.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.2484b9e0.css",
-    "static/js/main.3b5504e6.js"
+    "static/js/main.f668ba06.js"
   ]
 }
