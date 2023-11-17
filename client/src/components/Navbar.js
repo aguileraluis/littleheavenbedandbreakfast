@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import styled, { css } from 'styled-components'
+import styled, { css } from 'styled-components';
 import { Link, useLocation } from 'react-router-dom';
 import { menuData } from '../data/MenuData'
 import { Button } from './Button';

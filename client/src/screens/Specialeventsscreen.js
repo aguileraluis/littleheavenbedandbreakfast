@@ -7,6 +7,9 @@ import { Link } from 'react-router-dom';
 import Photos from '../components/Photos';
 import '../components/Photos.css';
 import event from '../video/event.MP4';
+import eventone from '../images/eventone.jpg';
+import eventtwo from '../images/eventtwo.jpg';
+import eventthree from '../images/eventthree.jpg';
 
 
 const Specialeventsscreen = () => {
@@ -49,27 +52,76 @@ const Specialeventsscreen = () => {
         <div style={{ display: 'block', flexDirection: 'row' }}>
 
           <h1 style={{ textAlign: 'center', verticalAlign: 'middle', marginBottom: '4rem', color: 'darkorange' }}>Check out our upcoming events!</h1>
-          <div className='demo' id='demo'>
+          <div className='demo' id='demo' style={{ backgroundColor: 'darkorange' }}>
             <div className='container'>
               <div className='col-1'>
                 <br />
                 <p>Christmas Dinner Party</p>
-                <p>Come join the fun and celebration!</p>
-
-
-                <div style={{paddingBottom: "56.25%", paddingRight: '0', paddingLeft: '0', position: "relative", display:"block", width: "100%"}}>
+                <p style={{ fontSize: '30px' }}>Come join the fun and celebration!</p>
+                <div style={{ paddingBottom: "56.25%", paddingRight: '0', paddingLeft: '0', position: "relative", display: "block", width: "100%" }}>
                   <iframe width="100%" height="100%"
-                    src={event} frameborder="0" allowfullscreen="" style={{ position: "absolute", top: "0", right: '0',bottom: '0', left: "0" }}>
+                    src={event} frameborder="0" allowfullscreen="" style={{ position: "absolute", top: "0", right: '0', bottom: '0', left: "0" }}>
                   </iframe>
                 </div>
-
-
 
                 <br />
                 <button style={{ backgroundColor: 'black' }} className='btn-primary'><a style={{ color: 'white', textDecoration: "none" }} href="https://www.facebook.com/events/1494191691393241/?acontext=%7B%22event_action_history%22%3A[]%7D">Go to Facebook Event</a></button>
               </div>
+
               <div className='col-1'>
                 <img className="smallimgthree" src={eventmenu} alt="menu" />
+              </div>
+            </div>
+          </div>
+
+
+          <div className='demo' id='demo'>
+            <div className='container'>
+              <div className='col-1'>
+                <img className="smallimgthree" src={eventone} alt="menu" />
+              </div>
+              <div className='col-1'>
+                <br />
+                <p>J. Lou Beauty Boutique</p>
+                <p style={{ fontSize: '30px' }}>Brides and Quinceañeras, mark your CALENDAR !! Grand Opening celebration!!
+                  December 16th !!! The first 50 people will receive a little gift from us for your special day!!</p>
+                <br />
+                <button style={{ backgroundColor: 'black' }} className='btn-primary'><a style={{ color: 'white', textDecoration: "none" }} href="https://www.facebook.com/story.php/?id=100083150506135&story_fbid=324124030369278&paipv=0&eav=AfYr-oqTha45ECm-5I9mGkzOpSRD7fVEvAR0xBytlcCPOrMzIfUpwvEYQ39G3WgVeH0&_rdr">Go to Facebook Event</a></button>
+              </div>
+            </div>
+          </div>
+
+
+
+          <div className='demo' id='demo' style={{ backgroundColor: 'darkorange' }}>
+            <div className='container'>
+              <div className='col-1'>
+                <br />
+                <p>Valentine's Date Night</p>
+                <p style={{ fontSize: '30px' }}>Valentine's Date Night at Little Heaven!
+                  make your "Reservation" before is too late!!
+                  Limited space, call now</p>
+                <br />
+                <button style={{ backgroundColor: 'black' }} className='btn-primary'><a style={{ color: 'white', textDecoration: "none" }} href="https://www.facebook.com/100089919546738/posts/pfbid035eM3jhCXbGVS2jeYjaFxsnswEstN5GXBc7r5pncPcX2ZXwD8mEiTv3tst2nv5Ubvl/?mibextid=I6gGtw">Go to Facebook Event</a></button>
+              </div>
+              <div className='col-1'>
+                <img className="smallimgthree" src={eventthree} alt="menu" />
+              </div>
+            </div>
+          </div>
+
+
+          <div className='demo' id='demo'>
+            <div className='container'>
+              <div className='col-1'>
+                <img className="smallimgthree" src={eventtwo} alt="menu" />
+              </div>
+              <div className='col-1'>
+                <br />
+                <p>Little Heaven's Bed & Breakfast Gift Certificate</p>
+                <p style={{ fontSize: '30px' }}>Come and get your Gift Certificates and make someone SMILE with Joy and gratitude!</p>
+                <br />
+                <button style={{ backgroundColor: 'black' }} className='btn-primary'><a style={{ color: 'white', textDecoration: "none" }} href="https://www.facebook.com/100089919546738/posts/pfbid02Yd7JbWJSsCwAveMEN7m1V4cc47F1m5faqcHRvUU3nDSsjocbwiit8U7rxsEDabdol/?mibextid=I6gGtw">Go to Facebook Event</a></button>
               </div>
             </div>
           </div>

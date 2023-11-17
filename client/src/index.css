@@ -222,7 +222,7 @@ nav a.active{
 }
 .smallimgthree {
   height: auto !important;
-  width: 50% !important; 
+  width: 90% !important; 
   border-radius: 5px !important;
   object-fit: fill;
 }
